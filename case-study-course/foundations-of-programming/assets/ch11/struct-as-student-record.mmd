@@ -1,0 +1,39 @@
+graph TD
+    subgraph "Student Record = C Struct"
+        direction TB
+        RECORD_VIEW["📋 STUDENT RECORD
+Student #1: Maya Patel
+----------------------------
+Student ID: 1
+Name: 'Maya Patel'
+Year: 2025
+Courses: ['Math', 'Physics']
+Status: 'Active'
+Enrollment Date: '2025-01-15'
+Program: 'Computer Science'"]
+        
+        STRUCT_VIEW["💻 C STRUCT
+struct Student s1;
+-------------------------------
+s1.id = 1;
+strcpy(s1.name, 'Maya Patel');
+s1.year = 2025;
+// courses array...
+s1.status = 'Active';"]
+    end
+    
+    MAPPING["Why this works:
+Student data has DIFFERENT TYPES:
+Numbers (id, year)
+Text (name, status)
+Dates (enrollment_date)
+Arrays (courses)
+A struct groups them ALL
+under ONE NAME!"]
+    
+    RECORD_VIEW --> MAPPING
+    STRUCT_VIEW --> MAPPING
+    
+    style RECORD_VIEW fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style STRUCT_VIEW fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style MAPPING fill:#ffffe6,stroke:#cccc00,stroke-dasharray:5 5

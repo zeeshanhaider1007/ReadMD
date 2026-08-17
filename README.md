@@ -6,118 +6,145 @@
 
 Read, navigate, search, and export a folder of Markdown files as a connected knowledge package — with a guided reading order you define once and can share anywhere.
 
-[Features](#-features) • [Why ReadMD?](#-why-readmd) • [Download](#-download) • [Quick Start](#-quick-start) • [FAQ](#-faq)
+[Features](#-features) • [Reading Flows](#-reading-flows) • [Download](#-download) • [Quick Start](#-quick-start) • [FAQ](#-faq)
 
 </div>
 
 ---
 
-## 🎯 Why ReadMD?
+## 🎯 Built for the Age of AI-Assisted Writing
 
-Markdown is great for *writing* — but not for *reading*. A folder of notes, documentation, or course materials has structure that lives only in file names, a table of contents, or the author's memory:
+ReadMD was designed around one idea: **knowledge should be a portable, machine-readable package.**
 
-- **What's the intended reading order?** Which file comes after this one?
-- **How do documents relate?** Which ones reference each other?
-- **How do I find anything?** When the folder grows, scrolling stops working.
+A folder of Markdown notes is great for *writing* — but the structure of a course, manual, or knowledge base usually lives only in file names or the author's memory. ReadMD makes that structure explicit with a **reading flow**: a small file that states, in plain text, which document comes next.
 
-ReadMD answers all three. It turns a plain folder of `.md` files into an interactive knowledge environment with **four complementary views** of the same content:
+That one file is the key to everything:
 
-| View | What it gives you |
-|------|-------------------|
-| 📖 **Reader** | Beautiful, native rendering of any Markdown file |
-| 🕸️ **Knowledge graph** | See and edit how your documents connect |
-| 🔗 **Reading sequences** | Follow an explicit, guided reading order |
-| 🔍 **Search** | Full-text search across every document |
+- **For readers** — it turns a folder of documents into a guided, chapter-by-chapter path with next/previous navigation, numbered sections, and a table of contents. The same folder is simultaneously an explorable knowledge graph and a fully searchable library.
+- **For AI tools** — the format is plain text and machine-readable, so an AI assistant can **author an entire course or knowledge base** — a folder of Markdown files plus a reading flow — and ReadMD renders it instantly. No restructuring, no manual setup, no proprietary format. A package written by an AI is indistinguishable from one written by a human, and both import the same way.
 
-**The core idea — a reading flow.** ReadMD's standout concept is the *reading flow*: an explicit, machine-readable chain of `source → target` edges that states precisely which document comes next. Define it once (via connections, `[[wikilinks]]`, or frontmatter), and ReadMD renders the entire chain as a guided, chapter-like sequence — while the same folder simultaneously remains an explorable graph and a searchable corpus.
+One format, readable by humans, by AI tools, and by any app that honors the contract.
 
-The flow is portable: it can be saved to a `reading-flow.json` file that re-imports into any reader honoring the contract. Your content stays **plain Markdown** — no proprietary format, no build step, no lock-in.
+---
+
+## 🔗 Reading Flows
+
+A reading flow is an ordered chain of `source → target` connections — a machine-readable answer to *"what comes next?"*
+
+You can build one automatically from `[[wikilinks]]` in your notes, define it yourself by connecting documents on the graph, or import one from a `reading-flow.json` file. Here is a real example (a small slice of a course):
+
+```json
+{
+  "name": "Foundations of Programming: Sequential Learning Path",
+  "description": "Sequential course flow linking all chapters, sub-sections, and end-of-chapter quizzes in recommended reading order.",
+  "version": "1.0",
+  "connections": [
+    {
+      "source": "00-foundations-before-code/01-what-is-programming.md",
+      "target": "00-foundations-before-code/02-why-c.md",
+      "label": "Ch00 What Is Programming → Why C"
+    },
+    {
+      "source": "00-foundations-before-code/02-why-c.md",
+      "target": "00-foundations-before-code/chapter-quiz.md",
+      "label": "Ch00 Why C → Ch00 Quiz"
+    },
+    {
+      "source": "00-foundations-before-code/chapter-quiz.md",
+      "target": "01-how-computers-work/01-binary-and-data.md",
+      "label": "Ch00 Quiz → Ch01 Binary And Data"
+    }
+  ]
+}
+```
+
+Each `connection` says: *after reading the `source` document, continue with the `target` document.* Import this file, and ReadMD materializes the chain as a guided reading sequence — with numbered headers, dividers, and next/previous buttons — while the same documents stay explorable as a graph.
+
+> **Try it:** open the bundled **case-study course** folder in this repository (`case-study-course/foundations-of-programming/`), import its flow file (`connections.json`), and follow the 106-edge chain end to end.
 
 ---
 
 ## ✨ Features
 
-### 📖 Markdown Reader with Beautiful Typography
+### 📖 Beautiful Markdown Reading
 
-Clean, readable typography in light and dark mode, supporting the full CommonMark spec plus:
+Clean, readable typography in light and dark mode, supporting standard Markdown plus:
 
-- **Syntax-highlighted code blocks** for dozens of languages (with a copy button)
-- **KaTeX math** — `$...$` and `$$...$$` rendered inline and in blocks
-- **Mermaid diagrams** — fenced ```mermaid blocks and `.mmd` files rendered as live, theme-aware diagrams
-- **Images** — local files, remote URLs, and base64 data URLs, all **lazy-loaded** as you scroll
-- **Tables, blockquotes, task lists, footnotes**, and YAML frontmatter (title, tags, metadata)
-- **Auto-generated Table of Contents** — hierarchical, with scroll tracking
-- **Click-to-lightbox** on any image or diagram — zoom, pan, and download
-- **External links open in-app** in an isolated window — never navigates away
+- **Syntax-highlighted code blocks** with a copy button
+- **Math formulas** rendered inline and in blocks
+- **Diagrams** — flowcharts and graphs rendered live, in both light and dark theme
+- **Images** — local files, web URLs, and embedded images, all loaded lazily as you scroll
+- **Tables, blockquotes, task lists, footnotes**, and document metadata
+- **Auto-generated Table of Contents** with scroll tracking
+- **Click-to-zoom** on any image or diagram
+- **External links open in-app** — you never leave your reading window
 
 ### 🕸️ Knowledge Graph — connections made visible
 
-The graph is ReadMD's signature feature. It automatically builds an interactive graph of your documents and the relationships between them:
+ReadMD automatically builds an interactive graph of your documents and how they relate:
 
-- **Automatic edges** discovered from `[[wikilinks]]` and `next:` frontmatter fields
+- **Automatic connections** discovered from `[[wikilinks]]` and document metadata
 - **Manual connections** — Shift+drag between nodes, or pick source/target in the Connect panel
-- **Collapsible folders** — explore the graph from coarse structure down to individual files
-- **Drag, pan, and zoom** — rearrange nodes freely; layout is fast even for hundreds of nodes
+- **Collapsible folders** — explore from coarse structure down to individual files
+- **Drag, pan, and zoom** — layout stays fast even with hundreds of nodes
 
-Your manual connections are **session-only by design**: ReadMD never writes into your workspace without you asking. When you close the app or switch folders, it offers to **save them as a `connections.json` file** — or export mid-session anytime with **Save flow…**. Saved flows are re-importable later.
+Your manual connections are **session-only by design**: ReadMD never writes into your files without you asking. When you close the app or switch folders, it offers to **save them as a flow file** — or export mid-session anytime with **Save flow…**. Saved flows are re-importable later.
 
-### 🔗 Reading Sequences — guided reading on demand
+### 🔗 Guided Reading Sequences
 
 Define an order for your documents and ReadMD loads it as a seamless, lazy sequence:
 
 - Click any node in the chain to open the full path — file names appear instantly, content loads on click
 - **Numbered headers and dividers** show your position in the chain
 - **Prev/Next navigation** with a sticky progress bar
-- **Folder-aware sequence TOC** — collapsible folders, per-file level badges, live updates when connections change
-- Open any single file in a chain and its chain's tree is shown, even outside sequence mode
+- **Folder-aware table of contents** — collapsible folders, level badges, live updates as connections change
+- Open any single file in a chain and its chain's outline is shown, even outside sequence mode
 
-This makes course material, tutorials, and chaptered documentation genuinely navigable — the reader always knows what comes next.
+This is what makes course material, tutorials, and chaptered documentation genuinely navigable — the reader always knows what comes next.
 
-### 🔍 Full-Text Search
+### 🔍 Instant Full-Text Search
 
-Every word in your folder is indexed with SQLite **FTS5 + BM25** — the same ranking algorithm used by modern search engines:
+Every word in your folder is indexed, giving you:
 
-- Ranked results with **highlighted `<mark>` snippets**
-- **Click a result to jump** to the exact match, with a temporary flash highlight
+- Ranked results with **highlighted snippets**
+- **Click a result to jump** straight to the exact match
 - Debounced, instant results as you type
 - Index rebuilt automatically when you open or scan a folder
 
-### 📤 DOCX & PDF Export
+### 📤 Word & PDF Export
 
-Export to Word (`.docx`) or PDF with one click — **Pandoc and Typst are bundled inside the installers**, no setup required:
+Export to Word (`.docx`) or PDF with one click — **everything needed is included in the installer**, no setup required:
 
 | Mode | What it produces |
 |------|------------------|
-| **Single file** | One `.docx` / `.pdf` from one Markdown file |
+| **Single file** | One Word / PDF document from one Markdown file |
 | **Multiple files (merged)** | Several files combined into one document |
 | **Multiple files (batch)** | One document per file |
 
-Export is print-quality: Mermaid diagrams are pre-rendered to high-resolution PNGs, raster images are page-fitted and DPI-tagged, and DOCX uses a custom Word reference template.
+Export is print-quality: diagrams are pre-rendered at high resolution, images are page-fitted, and Word documents use a clean, custom template.
 
 ### ✏️ Built-in Editor with Live Preview
 
 Edit Markdown without leaving the app:
 
-- **CodeMirror 6** editor with a **draggable live-preview split pane** (`Ctrl+E`)
-- Preview updates as you type — including **live Mermaid diagrams**
-- **`Ctrl+S`** saves atomically and invalidates caches instantly
+- Built-in editor with a **draggable live-preview split pane** (`Ctrl+E`)
+- Preview updates as you type — including **live diagrams**
+- **`Ctrl+S`** saves instantly
 - Unsaved-change guard prompts before you lose work
 
 ### 🔖 Bookmarks — never lose your place
 
-- One bookmark per file, storing the exact scroll position
-- **Per-folder**, stored in the OS app-data directory (never in your workspace)
-- Resume jumps straight back to the saved offset; dead bookmarks auto-pruned
+- One bookmark per file, storing your exact scroll position
+- **Per-folder**, stored safely on your computer (never inside your files)
+- Resume jumps straight back to where you left off; stale bookmarks are cleaned up automatically
 
 ### 🌙 Everything, in Dark Mode
 
-Dark mode themes the entire app — including **Mermaid diagrams**, which re-render with Mermaid's dark theme on toggle. Font zoom (`Ctrl+Scroll`), split-pane resizing, and a persistent session restore round out a reading experience designed for long sessions.
+Dark mode themes the entire app — including the diagrams, which re-render in a dark theme on toggle. Font zoom (`Ctrl+Scroll`) and split-pane resizing round out a reading experience built for long sessions.
 
 ---
 
-## 💡 What Makes It Different
-
-The feature matrix below — taken from the ReadMD paper — positions the app against six representative tools: Ghostwriter, MarkText, VSCodium, Obsidian, LiaScript, and Hyperbook.
+## 💡 How ReadMD Compares
 
 | Dimension | ReadMD | Ghostwriter | MarkText | VSCodium | Obsidian | LiaScript | Hyperbook |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -126,13 +153,13 @@ The feature matrix below — taken from the ReadMD paper — positions the app a
 | Explicit sequential reading flow | ✅ | ❌ | ❌ | ⚠️ <sup>c</sup> | ❌ | ⚠️ <sup>e</sup> | ⚠️ <sup>e</sup> |
 | Built-in knowledge graph | ✅ | ❌ | ❌ | ⚠️ <sup>f</sup> | ✅ | ❌ | ❌ |
 | Reading-flow import (`reading-flow.json`) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| DOCX/PDF export | ✅ | ✅ | ⚠️ <sup>g</sup> | ❌ | ❌ | ⚠️ <sup>h</sup> | ❌ |
+| Word / PDF export | ✅ | ✅ | ⚠️ <sup>g</sup> | ❌ | ❌ | ⚠️ <sup>h</sup> | ❌ |
 | No build / no hosting / no LMS | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
-| Free & open source | ✅ (MIT) | ✅ | ✅ | ✅ | ⚠️ <sup>i</sup> | ✅ | ✅ |
+| Free & open source | ✅ | ✅ | ✅ | ✅ | ⚠️ <sup>i</sup> | ✅ | ✅ |
 
-<sup>a</sup> Browser interpreter · <sup>b</sup> Build step and hosting · <sup>c</sup> Via file-naming conventions or extensions · <sup>e</sup> Linear, but dialect- or pipeline-bound · <sup>f</sup> Via extensions (e.g., Foam) · <sup>g</sup> HTML/PDF only · <sup>h</sup> PDF/SCORM, no DOCX · <sup>i</sup> Proprietary
+<sup>a</sup> Browser interpreter · <sup>b</sup> Build step and hosting · <sup>c</sup> Via file-naming conventions or extensions · <sup>e</sup> Linear, but dialect- or pipeline-bound · <sup>f</sup> Via extensions · <sup>g</sup> HTML/PDF only · <sup>h</sup> PDF only, no Word · <sup>i</sup> Proprietary
 
-Among these tools, **only ReadMD satisfies every dimension of the package model**: local-first desktop delivery, plain Markdown, an explicit machine-readable reading flow, a built-in knowledge graph, reading-flow import, lossless DOCX/PDF export, zero-configuration operation, and an open-source license. The closest competitors satisfy at most four of the eight dimensions — the decisive difference is the combination: each other tool supplies one or two pieces of the package contract, while ReadMD supplies all of them, so a package authored for the model imports, reads, navigates, searches, edits, and exports within a single system.
+Only ReadMD combines all of it: plain Markdown, a built-in knowledge graph, a machine-readable reading flow you can import and export, one-click Word/PDF export, zero configuration, and an open-source license.
 
 ---
 
@@ -140,17 +167,16 @@ Among these tools, **only ReadMD satisfies every dimension of the package model*
 
 | Platform | Format | How to get it |
 |----------|--------|---------------|
-| **Windows** | `.exe` (NSIS) or `.msi` (WiX) | Download from [Releases](https://github.com/user/ReadMD/releases) |
-| **Linux** | `.deb` or `.AppImage` | Download from [Releases](https://github.com/user/ReadMD/releases) |
+| **Windows** | `.exe` installer | Download from [Releases](https://github.com/zeeshanhaider1007/ReadMD/releases/tag/v0.1.0) |
+| **Linux** | `.deb` package or `.AppImage` (portable) | Download from [Releases](https://github.com/zeeshanhaider1007/ReadMD/releases/tag/v0.1.0) |
 
-> **Why is the installer this size?** ReadMD's installers bundle everything needed to work out of the box: the Pandoc and Typst engines for DOCX/PDF export (~150–220 MB of binaries each, compressed inside the package), the Noto Color Emoji font, and — for the AppImage — the WebKitGTK runtime itself. That's what makes export and emoji work with zero setup; the app's own code is a fraction of the total.
+> **Why is the installer this size?** The installer bundles everything the app needs to work out of the box — the export tools for Word/PDF documents and the emoji font — so you never have to install anything else. Most of the size is those bundled components; the app itself is small.
 
 **Requirements:**
 
-- **Windows:** Windows 10 or later (WebView2 is built-in)
-- **Linux:** System with WebKitGTK 4.1, GTK3, and a working X11 display. The `.deb` automatically installs `fonts-noto-color-emoji`; the AppImage needs no font setup
-- **Emoji:** Noto Color Emoji is **bundled inside every installer** — emoji render on any system, no font installation needed
-- **DOCX/PDF export:** Pandoc and Typst are **bundled with the Windows and Linux installers** — no action needed
+- **Windows:** Windows 10 or later (64-bit)
+- **Linux:** 64-bit, on a recent distribution — Ubuntu 24.04+, Debian 12+, Fedora 39+ or newer. The `.deb` works out of the box there; the `.AppImage` needs no installation — make it executable and run it.
+- **Everything else is included** — emoji render correctly and Word/PDF export works with no extra installation
 
 ---
 
@@ -165,30 +191,39 @@ Among these tools, **only ReadMD satisfies every dimension of the package model*
 7. **Connect documents** — Shift+drag on the graph, or use the Connect panel, to link related content
 8. **Follow a sequence** — click any connected node to walk the full chain with Prev/Next
 
-> **Tip:** Open a folder of linked Markdown notes (with `[[wikilinks]]`) to see the graph come to life. Import an existing `reading-flow.json` to materialize a guided reading sequence instantly.
-
-### Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl+E` | Toggle edit mode (editor + live preview) |
-| `Ctrl+S` | Save the current file (in edit mode) |
-| `Ctrl+Scroll` | Zoom text in/out in the viewer |
-| `Shift+Drag` (on graph) | Create a connection between two nodes |
+> **Tip:** Open a folder of linked Markdown notes (with `[[wikilinks]]`) to see the graph come to life. Import a `reading-flow.json` to materialize a guided reading sequence instantly.
+>
+> **On Linux with the `.AppImage`:** no installation needed — `chmod +x ReadMD_0.1.0_amd64.AppImage` and run `./ReadMD_0.1.0_amd64.AppImage`.
 
 ---
 
 ## 📸 Screenshots
 
-> *Screenshots coming soon. The app is in active development — here's what you'll see:*
+### 📖 Reader — light and dark mode
 
-- **Reader view:** Clean, full-width Markdown rendering with syntax-highlighted code, KaTeX math, and live Mermaid diagrams
-- **File tree sidebar:** Nested folder structure with active-file highlighting
-- **Knowledge graph:** Interactive graph with draggable nodes and Shift+drag connections
-- **Sequence view:** Multiple files concatenated with numbered headers, dividers, and Prev/Next navigation
-- **Search panel:** Ranked results with highlighted snippets and jump-to-match
-- **Editor:** CodeMirror with a draggable live-preview split pane
-- **Export dialog:** Single, merged, or batch DOCX/PDF modes
+![Reader in light mode](screenshots/reader-light.png)
+
+![Reader in dark mode](screenshots/reader-dark.png)
+
+### 🕸️ Knowledge graph
+
+![Knowledge graph view](screenshots/knowledge-graph.png)
+
+### 🔗 Guided reading sequence
+
+![Guided reading sequence](screenshots/guided-sequence.png)
+
+### 🔍 Full-text search
+
+![Full-text search with highlighted results](screenshots/full-text-search.png)
+
+### 🧩 Connect panel & flow import
+
+![Connect panel for importing and saving reading flows](screenshots/connect-panel.png)
+
+### ✏️ Editor with live preview
+
+![Built-in editor with live preview](screenshots/editor.png)
 
 ---
 
@@ -196,97 +231,40 @@ Among these tools, **only ReadMD satisfies every dimension of the package model*
 
 **Q: Can I use ReadMD with my existing Markdown notes?**
 
-Yes. ReadMD works with plain `.md` files (plus `.markdown`, `.mdown`, `.mdtext`, `.mdx`, `.mmd`). Open any folder and it scans all Markdown files recursively. No special metadata or configuration required — `[[wikilinks]]` and `next:` frontmatter are optional enhancements.
+Yes. ReadMD works with plain `.md` files. Open any folder and it scans all Markdown files recursively. No special metadata or configuration required — `[[wikilinks]]` and reading flows are optional enhancements.
 
 **Q: Does ReadMD modify my files?**
 
-No. ReadMD is read-only with respect to your source files — it indexes and caches content in its own SQLite database, and stores bookmarks and logs in OS app-data directories. The only exceptions: DOCX/PDF export creates new output files alongside your originals, and saving a connection flow writes the `reading-flow.json` / `connections.json` file you explicitly asked for.
+No. ReadMD is read-only with respect to your files — it keeps its own private index on your computer, never inside your documents. The only exceptions: export creates new Word/PDF files alongside your originals, and saving a flow writes the `reading-flow.json` file you explicitly asked for.
 
 **Q: What is a reading flow?**
 
-A reading flow is an ordered chain of document-to-document edges — a machine-readable answer to "what comes next?" ReadMD can import one from a `reading-flow.json` file, build one from your `[[wikilinks]]` and `next:` frontmatter, or let you create one by connecting documents on the graph. The flow renders as a guided sequence, and it's portable: you can save it and re-import it into any tool that honors the contract.
+A reading flow is an ordered chain of document-to-document connections — a machine-readable answer to "what comes next?" ReadMD can import one from a `reading-flow.json` file, build one from your `[[wikilinks]]`, or let you create one by connecting documents on the graph. The flow renders as a guided sequence, and it's portable: you can save it and re-import it into any tool that honors the contract.
+
+**Q: Can I export to Word or PDF?**
+
+Yes. Use the export dropdown to choose **Word** or **PDF**. Everything needed for export is included in the installer — no setup required. Diagrams and math render cleanly in both formats.
 
 **Q: How does the graph handle very large folders?**
 
-The graph is built lazily and layout is fast even for hundreds of nodes. Loading the case-study course (17 chapters, ~114 files) and folders with several times more documents kept every node responsive and interactive. You can zoom, pan, and collapse folders to navigate even complex graphs.
-
-**Q: Can I export to PDF?**
-
-Yes. Use the export dropdown and switch the format to **PDF**. PDFs are generated with Pandoc's Typst engine, which handles images (including Mermaid diagrams) and LaTeX math natively. Pandoc and Typst are **bundled with the Windows and Linux installers** — no setup needed.
+Very well. The graph is built on demand and stays responsive even with hundreds of nodes. You can zoom, pan, and collapse folders to navigate complex projects.
 
 **Q: Are my images stored in the app?**
 
-Only base64 data-URL images are cached in ReadMD's internal database (so they display instantly on re-open). Local file images and remote URL images load from their original sources each time.
+Only embedded images are cached by the app (so they display instantly on re-open). Local file images and web images load from their original sources each time.
 
-**Q: Emojis show as empty boxes on Linux?**
+**Q: Emojis show as empty boxes?**
 
-This shouldn't happen on current installers — Noto Color Emoji is **bundled inside every installer**, so emoji render without any system font. On older installs, install the system font once (`sudo apt install fonts-noto-color-emoji`) and restart ReadMD.
+This shouldn't happen — the emoji font is included in the installer, so emoji render correctly on any system.
 
 **Q: Does ReadMD support Obsidian or Roam-style Markdown?**
 
-ReadMD supports standard CommonMark plus `[[wikilinks]]` and YAML frontmatter with `title`, `tags`, and `next:` fields. Other extended syntaxes (Obsidian callouts, Dataview queries, etc.) are not yet supported.
-
----
-
-## 🛠️ Development
-
-ReadMD is built with **Tauri 2.0** (Rust) + **Vue 3** (TypeScript) + **Tailwind CSS v4**.
-
-**Run in development mode:**
-
-```bash
-npm install
-npm run tauri dev
-```
-
-**Build installers with Docker (Linux/Windows):**
-
-```bash
-docker compose --profile build run --rm build-linux     # .deb + AppImage
-docker compose --profile build run --rm build-windows   # Windows NSIS installer
-```
-
-**Documentation:** the [docs/](docs/README-FIRST.md) directory contains a full developer guide — project architecture, Rust backend, Vue frontend, Tauri IPC, data flow, database caching, and a complete feature catalog.
-
-**Building installers locally** requires these bundled resource files in `src-tauri/resources/` (they're git-ignored; CI downloads them automatically):
-
-```bash
-# Noto Color Emoji (emoji rendering — ~10 MB)
-curl -L -o src-tauri/resources/NotoColorEmoji.ttf \
-  https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf
-
-# Pandoc + Typst (DOCX/PDF export) — see the error messages in commands.rs for exact URLs
-```
-
-**Docker dev-container troubleshooting** — if the mouse pointer is invisible over the app window when running `docker compose up`:
-
-```bash
-docker compose build readmd-dev   # needed once after Dockerfile changes
-```
-
-The dev image installs `dmz-cursor-theme`, writes `gtk-cursor-theme-name=DMZ-White` into devuser's GTK settings, and sets `XCURSOR_THEME=DMZ-White` plus WebKitGTK software-rendering fallbacks. Packaged builds are unaffected — those env vars only apply inside the container.
-
-**If you're on Windows with Docker Desktop / WSLg and the pointer is still invisible:** the cursor over an X11 window is drawn by WSLg's Xwayland compositor, which resolves cursor themes from the **WSL distro's** filesystem — *not* from inside the container:
-
-```powershell
-# 1. Open your WSL distro and install a cursor theme there:
-wsl -d Ubuntu -- sudo apt update && wsl -d Ubuntu -- sudo apt install -y dmz-cursor-theme
-
-# 2. Make sure XCURSOR_THEME reaches WSLg (PowerShell):
-wsl -d Ubuntu -- sudo sh -c 'echo "export XCURSOR_THEME=DMZ-White" >> /etc/profile.d/cursor.sh'
-
-# 3. Fully restart WSL so the compositor picks up the theme:
-wsl --shutdown
-```
-
-Then restart Docker Desktop and `docker compose up` again.
+ReadMD supports standard Markdown plus `[[wikilinks]]` and YAML document metadata with `title`, `tags`, and `next:` fields. Other extended syntaxes are not yet supported.
 
 ---
 
 <div align="center">
 
 **ReadMD** is released under the MIT License.
-
-Built with [Tauri](https://v2.tauri.app/), [Vue 3](https://vuejs.org/), and [Tailwind CSS](https://tailwindcss.com/).
 
 </div>

@@ -1,0 +1,20 @@
+graph TD
+    subgraph "Constants & Literals in C"
+        direction TB
+        
+        LIT["Literals<br/>Fixed values written in code"] --> INT_LIT["Integer: 42, -7, 0"]
+        LIT --> FLOAT_LIT["Floating: 3.14, -0.5"]
+        LIT --> CHAR_LIT["Character: 'A', '\\n', '9'"]
+        LIT --> STR_LIT["String: \"Hello\""]
+        
+        CONST["const keyword<br/>Read-only variable"] --> CEX["const int MAX = 100;<br/>MAX = 200;  // ERROR!<br/>Read-only after initialization"]
+        
+        DEFINE["#define directive<br/>Preprocessor substitution"] --> DEX["#define PI 3.14159<br/>Before compile:<br/>PI → replaced with 3.14159<br/>No type, no memory<br/>Just text replacement"]
+        
+        COMPARE["Comparison"] --> C1["const int x = 5;<br/>- Has a type (int)<br/>- Has an address in memory<br/>- Can use & operator"]
+        COMPARE --> C2["#define X 5<br/>- No type (just text)<br/>- No memory address<br/>- Replaced at compile time"]
+    end
+    
+    style CONST fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style DEFINE fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style COMPARE fill:#ffffe6,stroke:#cccc00

@@ -1,0 +1,21 @@
+graph LR
+    subgraph "ASCII Table - How Text is Stored"
+        direction LR
+        LETTER[Character] --> CODE[ASCII Code] --> BINARY[Binary in Memory]
+    end
+    
+    subgraph "Examples"
+        A['A' = 65] --> ABIN[01000001]
+        B['B' = 66] --> BBIN[01000010]
+        Z['Z' = 90] --> ZBIN[01011010]
+        a['a' = 97] --> aBIN[01100001]
+        z['z' = 122] --> zBIN[01111010]
+        ZERO['0' = 48] --> ZEROBIN[00110000]
+        SPACE[' ' = 32] --> SPBIN[00100000]
+    end
+    
+    NOTE["Notice: 'A' (65) and 'a' (97)<br/>differ by exactly 32 —<br/>just one bit!"]
+    
+    style A fill:#e6f3ff,stroke:#0066cc
+    style a fill:#e6ffe6,stroke:#00cc00
+    style NOTE fill:#ffffe6,stroke:#cccc00,stroke-dasharray: 5 5

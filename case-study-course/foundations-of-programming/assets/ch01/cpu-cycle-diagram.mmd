@@ -1,0 +1,31 @@
+stateDiagram-v2
+    [*] --> Fetch
+    Fetch --> Decode: Get instruction from memory
+    Decode --> Execute: Interpret the instruction
+    Execute --> Fetch: Store result, repeat
+    
+    state Fetch {
+        [*] --> ReadPC: Copy PC to Memory Address Register
+        ReadPC --> GetMem: Read memory at that address
+        GetMem --> IncPC: Increment Program Counter
+        IncPC --> StoreIR: Store instruction in Instruction Register
+        StoreIR --> [*]
+    }
+    
+    state Decode {
+        [*] --> ParseOp: Identify operation (ADD, SUB, LOAD)
+        ParseOp --> GetOperands: Identify data locations
+        GetOperands --> [*]
+    }
+    
+    state Execute {
+        [*] --> Perform: ALU performs the operation
+        Perform --> WriteBack: Store result in register/memory
+        WriteBack --> [*]
+    }
+    
+    note right of Fetch
+        The CPU spends most of its time
+        in this loop, billions of times
+        per second!
+    end note

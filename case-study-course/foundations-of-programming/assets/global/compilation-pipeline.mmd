@@ -1,0 +1,14 @@
+graph LR
+    SRC[source.c<br/>Your C Code] --> PRE[Preprocessor<br/>Handles #include, #define]
+    PRE --> COMP[Compiler<br/>Translates C to Assembly]
+    COMP --> ASM[source.s<br/>Assembly Code]
+    ASM --> ASMB[Assembler<br/>Converts to Machine Code]
+    ASMB --> OBJ[source.o<br/>Object File]
+    OBJ --> LINK[Linker<br/>Combines Object Files]
+    LIB[Libraries<br/>libc, etc.] --> LINK
+    LINK --> EXE[program.exe / a.out<br/>Executable File]
+    EXE --> RUN[Run!<br/>$ ./program]
+
+    style SRC fill:#e6ffe6,stroke:#00cc00
+    style EXE fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style RUN fill:#ffffe6,stroke:#cccc00,stroke-width:2px

@@ -1,0 +1,40 @@
+graph LR
+    subgraph "Pointer Arithmetic - Moving Through Memory"
+        direction LR
+        ARR["int arr[] = {10, 20, 30, 40, 50}
+arr (without []) = pointer to first element"]
+        
+        BASE["arr → arr[0] = 10
+(Address: 0x100)"]
+        
+        P1["arr + 1 → arr[1] = 20
+(Address: 0x104)
+(SKIPS 4 bytes - sizeof(int))"]
+        
+        P2["arr + 2 → arr[2] = 30
+(Address: 0x108)"]
+        
+        P3["arr + 3 → arr[3] = 40
+(Address: 0x10C)"]
+        
+        P4["arr + 4 → arr[4] = 50
+(Address: 0x110)"]
+    end
+    
+    KEY["KEY INSIGHT:
+arr[i] is EQUIVALENT to *(arr + i)
+This is why C arrays are zero-indexed!
+arr[0] = *(arr + 0) = *arr"]
+    
+    WARN["WARNING:
+No built-in bounds checking!
+*(arr + 10) will access memory
+you don't own (segfault!)"]
+    
+    style BASE fill:#e6ffe6,stroke:#00cc00
+    style P1 fill:#e6ffe6,stroke:#00cc00
+    style P2 fill:#e6ffe6,stroke:#00cc00
+    style P3 fill:#e6ffe6,stroke:#00cc00
+    style P4 fill:#e6ffe6,stroke:#00cc00
+    style KEY fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style WARN fill:#ffe6e6,stroke:#cc0000

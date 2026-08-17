@@ -1,0 +1,16 @@
+graph TD
+    subgraph "Three Loop Types in C"
+        direction TB
+        WHILE["while loop<br/>---<br/>int i = 0;<br/>while (i &lt; 5) {<br/>    printf(&quot;%d&quot;, i);<br/>    i++;<br/>}<br/>Checks condition FIRST<br/>May execute 0 times"]
+        
+        FOR["for loop<br/>---<br/>for (int i = 0; i &lt; 5; i++) {<br/>    printf(&quot;%d&quot;, i);<br/>}<br/>All loop control in ONE line<br/>Most common for counting"]
+        
+        DO["do-while loop<br/>---<br/>int i = 0;<br/>do {<br/>    printf(&quot;%d&quot;, i);<br/>    i++;<br/>} while (i &lt; 5);<br/>Executes AT LEAST ONCE<br/>Checks condition AFTER"]
+    end
+    
+    USAGE["When to use each:<br/>while = Don't know how many times<br/>for = Know the exact count<br/>do-while = Must run at least once"]
+    
+    style WHILE fill:#e6f3ff,stroke:#0066cc
+    style FOR fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style DO fill:#ffffe6,stroke:#cccc00
+    style USAGE fill:#f0f0f0,stroke:#999,stroke-dasharray:5 5

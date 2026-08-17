@@ -1,0 +1,44 @@
+graph TD
+    subgraph "Algorithms = Everyday Search Strategies"
+        direction TB
+        LINEAR_SEARCH["ROLL CALL SEARCH
+= Linear Search O(n)
+Ask every person ONE BY ONE
+'Does anyone have my keys?'
+Guaranteed to find an answer
+But SLOW for 1000 people"]
+        
+        BINARY_SEARCH["DICTIONARY SEARCH
+= Binary Search O(log n)
+'Is the word in the first half? No.'
+'In the next quarter? Yes.'
+'In the next eighth? Yes.'
+Direct to specific section
+FAST but requires sorted data"]
+        
+        GREEDY["SNACK CHOICE
+= Greedy Algorithm
+'What's the best option RIGHT NOW?'
+Make the immediate best choice
+May miss the long-term best option
+Fast but not always optimal"]
+        
+        DIVIDE_CONQUER["SORTING A DECK
+= Divide & Conquer
+Split the deck into smaller piles
+Sort each pile separately
+Combine the sorted piles
+'Break a big task into parts,
+   finish each, then combine'"]
+    end
+    
+    KEY["The RIGHT algorithm
+depends on your data
+and your constraints.
+Knowing WHEN to use which
+strategy wins the day."]
+    
+    style LINEAR_SEARCH fill:#ffe6e6,stroke:#cc0000
+    style BINARY_SEARCH fill:#e6ffe6,stroke:#00cc00
+    style DIVIDE_CONQUER fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style KEY fill:#ffffe6,stroke:#cccc00,stroke-width:2px

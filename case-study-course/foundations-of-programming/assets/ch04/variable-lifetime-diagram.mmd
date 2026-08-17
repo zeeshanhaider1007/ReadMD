@@ -1,0 +1,22 @@
+graph LR
+    subgraph "Variable Lifetime"
+        direction TB
+        DECL["Declaration<br/>int x;"] --> INIT["Initialization<br/>x = 42;"]
+        INIT --> USE["Use<br/>printf(&quot;%d&quot;, x);"]
+        USE --> MODIFY["Modify<br/>x = x + 1;"]
+        MODIFY --> DESTROY["Destroy<br/>(goes out of scope)"]
+    end
+    
+    subgraph "Scope Types"
+        LOCAL["Local Variable<br/>Inside a function<br/>Created when function called<br/>Destroyed when function returns"]
+        GLOBAL["Global Variable<br/>Outside any function<br/>Created at program start<br/>Destroyed at program end"]
+        STATIC["Static Variable<br/>Inside a function<br/>Created at program start<br/>Destroyed at program end<br/>BUT only visible inside function"]
+    end
+    
+    DESTROY --> LOCAL
+    DESTROY --> GLOBAL
+    DESTROY --> STATIC
+    
+    style LOCAL fill:#e6ffe6,stroke:#00cc00
+    style GLOBAL fill:#e6f3ff,stroke:#0066cc
+    style STATIC fill:#ffffe6,stroke:#cccc00

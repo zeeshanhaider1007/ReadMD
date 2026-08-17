@@ -1,0 +1,22 @@
+graph LR
+    subgraph "C Data Type Sizes (typical)"
+        direction TB
+        CHAR["char<br/>1 byte<br/>-128 to 127<br/>or 0 to 255"] --> TEXT["Used for:<br/>Single characters,
+/>ASCII values"]
+        INT["int<br/>4 bytes<br/>-2B to 2B<br/>Whole numbers"] --> TEXT2["Used for:<br/>Counts, IDs,
+/>Indexes"]
+        FLOAT["float<br/>4 bytes<br/>~7 decimal digits<br/>Decimal numbers"] --> TEXT3["Used for:<br/>Simple decimals,
+/>Sensor readings"]
+        DOUBLE["double<br/>8 bytes<br/>~15 decimal digits<br/>High precision"] --> TEXT4["Used for:<br/>Scientific,
+/>Financial data"]
+        SHORT["short<br/>2 bytes<br/>-32K to 32K<br/>Small integers"] --> TEXT5["Used for:<br/>Saving memory,
+/>Small counts"]
+        LONG["long<br/>8 bytes<br/>Very large<br/>Big integers"] --> TEXT6["Used for:<br/>Large file sizes,
+/>Timestamps"]
+    end
+    
+    KEY["sizeof() tells you<br/>exact size on YOUR machine"]
+    style CHAR fill:#e6ffe6,stroke:#00cc00
+    style INT fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style DOUBLE fill:#ffe6e6,stroke:#cc0000
+    style KEY fill:#ffffe6,stroke:#cccc00

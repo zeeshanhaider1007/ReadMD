@@ -1,0 +1,20 @@
+graph LR
+    subgraph "Ternary Operator (?:)"
+        direction TB
+        SYNTAX["condition ? value_if_true : value_if_false"]
+        
+        EXAMPLES["Examples:<br/><br/>int max = (a > b) ? a : b;<br/>// If a > b, max = a; else max = b<br/><br/>printf('%s', (age >= 18) ? 'Adult' : 'Minor');<br/>// Prints 'Adult' or 'Minor' based on age<br/><br/>int abs = (x < 0) ? -x : x;<br/>// Absolute value: if negative, flip sign"]
+    end
+    
+    subgraph "Equivalent if-else"
+        IFELSE["if (a > b) {<br/>    max = a;<br/>} else {<br/>    max = b;<br/>}"]
+    end
+    
+    SYNTAX --> EXAMPLES
+    SYNTAX --> IFELSE
+    
+    RULE["When to Use Ternary:<br/>✅ Simple yes/no assignments<br/>✅ Short conditions (one line)<br/>✅ In printf or return statements<br/><br/>When to Use if-else:<br/>✅ Complex logic<br/>✅ Multiple statements per branch<br/>✅ Readability matters more than brevity"]
+    
+    style SYNTAX fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style IFELSE fill:#e6ffe6,stroke:#00cc00
+    style RULE fill:#ffffe6,stroke:#cccc00,stroke-dasharray: 5 5

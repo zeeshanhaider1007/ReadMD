@@ -1,0 +1,16 @@
+graph TD
+    subgraph "Abstraction Layers of a Computer"
+        direction TB
+        APP[Application Programs<br/>Web Browsers, Games, Word] --> HIGH[High-Level Languages<br/>Python, JavaScript, Java]
+        HIGH --> LOW[Low-Level Languages<br/>C, C++, Rust]
+        LOW --> ASM[Assembly Language<br/>Mnemonics for CPU]
+        ASM --> BIN[Machine Code<br/>Binary: 010101]
+        BIN --> HARD[Hardware<br/>Transistors, Gates, Circuits]
+    end
+    
+    NOTE["C lives here —<br/>it gives you direct access<br/>to the machine"]
+    
+    style APP fill:#e6ffe6,stroke:#00cc00
+    style LOW fill:#e6f3ff,stroke:#0066cc,stroke-width:3px
+    style HARD fill:#ffe6e6,stroke:#cc0000
+    style NOTE fill:#ffffe6,stroke:#cccc00,stroke-dasharray: 5 5

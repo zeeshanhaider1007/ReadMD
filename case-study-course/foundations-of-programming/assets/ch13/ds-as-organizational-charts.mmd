@@ -1,0 +1,34 @@
+graph TD
+    subgraph "Data Structures = A Company's Organization"
+        direction TB
+        COMPANY[COMPANY<br/>= Program/System]
+        
+        STAFF[Staff List<br/>= ARRAY<br/>All employees, indexed by ID<br/>Random access, fixed size]
+        
+        CHAIN[Assembly Line<br/>= LINKED LIST<br/>Chain of stations<br/>Station 1 → 2 → 3]
+        
+        ORG[Org Chart<br/>= TREE<br/>Hierarchical organization<br/>CEO → Depts → Teams]
+        
+        PHONE[Phone Directory<br/>= HASH TABLE<br/>Name → Number<br/>Instant lookup]
+        
+        SOCIAL[Friend Network<br/>= GRAPH<br/>People connected by friendships<br/>Complex relationships]
+    end
+    
+    COMPANY --> STAFF
+    COMPANY --> CHAIN
+    COMPANY --> ORG
+    COMPANY --> PHONE
+    COMPANY --> SOCIAL
+    
+    KEY["Why data structures matter:
+The RIGHT structure makes your
+program SIMPLE and FAST.
+The WRONG structure makes it
+COMPLEX and SLOW."]
+    
+    style STAFF fill:#e6f3ff,stroke:#0066cc
+    style CHAIN fill:#e6ffe6,stroke:#00cc00
+    style ORG fill:#e6ffe6,stroke:#00cc00
+    style PHONE fill:#e6ffe6,stroke:#00cc00
+    style SOCIAL fill:#e6ffe6,stroke:#00cc00
+    style KEY fill:#ffffe6,stroke:#cccc00,stroke-width:2px

@@ -1,0 +1,9 @@
+graph TD
+    subgraph "Struct Memory Layout"
+        MEM["Memory Layout:<br/>┌──────────────────────┐<br/>│ article_number (4B)  │  ← 0x100<br/>├──────────────────────┤<br/>│ title[50] (50B)      │  ← 0x104<br/>├──────────────────────┤<br/>│ year_signed (4B)     │  ← 0x136<br/>├──────────────────────┤<br/>│ status[20] (20B)     │  ← 0x13A<br/>└──────────────────────┘<br/>Total: 78 bytes"]
+    end
+    
+    ANALOGY["Everyday Analogy:<br/>A form you fill out is a STRUCT<br/>Field 1: {Article 1, Non-Proliferation, 2025, Active}<br/>It groups related data<br/>All part of one concept<br/>Access via t1.article_number"]
+    
+    style MEM fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style ANALOGY fill:#ffffe6,stroke:#cccc00

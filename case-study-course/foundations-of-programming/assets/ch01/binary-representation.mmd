@@ -1,0 +1,19 @@
+graph LR
+    subgraph "How Numbers Are Stored"
+        direction LR
+        DEC1[Decimal 42] --> BIN1[Binary: 00101010]
+        BIN1 --> MEM1[Memory: 8 bits<br/>0 0 1 0 1 0 1 0]
+        
+        DEC2[Decimal 255] --> BIN2[Binary: 11111111]
+        BIN2 --> MEM2[Memory: 8 bits<br/>1 1 1 1 1 1 1 1]
+        
+        CHAR_A[Char 'A'] --> ASCII[ASCII: 65]
+        ASCII --> BIN3[Binary: 01000001]
+    end
+    
+    KEY["Key Rule:<br/>Everything in a computer<br/>is ultimately BINARY"]
+    
+    style BIN1 fill:#e6ffe6,stroke:#00cc00
+    style BIN2 fill:#e6ffe6,stroke:#00cc00
+    style BIN3 fill:#e6ffe6,stroke:#00cc00
+    style KEY fill:#ffffe6,stroke:#cccc00,stroke-dasharray: 5 5

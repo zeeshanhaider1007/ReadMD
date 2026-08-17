@@ -1,0 +1,28 @@
+graph TD
+    subgraph "Loop Control: break vs continue"
+        direction TB
+        
+        START["for (i = 0; i < 10; i++)"] --> CHECK{"i < 10?"}
+        CHECK -->|"true"| BODY["Loop body execution"]
+        BODY --> DECIDE{"Encounter<br/>break or<br/>continue?"}
+        
+        DECIDE -->|"break"| BREAK["break;<br/>Exit the loop IMMEDIATELY<br/>Jump to after the loop"]
+        BREAK --> AFTER["Code after the loop"]
+        
+        DECIDE -->|"continue"| CONTINUE["continue;<br/>Skip the rest of THIS iteration<br/>Jump to next iteration"]
+        CONTINUE --> UPDATE["i++ (update)"]
+        UPDATE --> CHECK
+        
+        DECIDE -->|"neither"| NORMAL["Execute rest of body"]
+        NORMAL --> UPDATE
+        
+        CHECK -->|"false"| AFTER
+        
+    end
+    
+    EXAMPLES["Examples:<br/><br/>// break: find first match<br/>for (...) {<br/>    if (found) break;  // stop searching<br/>}<br/><br/>// continue: skip invalid<br/>for (...) {<br/>    if (!valid) continue;  // skip this one<br/>    process();<br/>}"]
+    
+    style BREAK fill:#ffe6e6,stroke:#cc0000,stroke-width:2px
+    style CONTINUE fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style AFTER fill:#e6ffe6,stroke:#00cc00
+    style EXAMPLES fill:#ffffe6,stroke:#cccc00,stroke-dasharray: 5 5

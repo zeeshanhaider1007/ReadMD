@@ -1,0 +1,48 @@
+graph TD
+    subgraph "Types of Pointers"
+        direction TB
+        INT_PTR["int *p;
+Points to an integer
+p = &x;
+*p gives int value"]
+        
+        CHAR_PTR["char *p;
+Points to a character
+Often used for strings
+p = 'Hello';
+*p gives 'H'"]
+        
+        VOID_PTR["void *p;
+Generic pointer
+Can point to ANY type
+Must CAST before dereferencing
+int *ip = (int *)p;"]
+        
+        NULL_PTR["NULL pointer
+Points to NOTHING
+int *p = NULL;
+ALWAYS check before use!
+if (p != NULL) { *p = 5; }"]
+        
+        DANGLE["DANGLING pointer
+Points to FREED memory
+NEVER dereference!
+Set to NULL after free()
+free(p); p = NULL;"]
+        
+        FUNC_PTR["Function pointer
+Points to a FUNCTION
+int (*op)(int, int);
+op = &add;
+result = op(5, 3);"]
+        
+        PTR_PTR["int **pp;
+Pointer to a pointer
+pp = &p;  // p is int*
+**pp gives int value"]
+    end
+    
+    style VOID_PTR fill:#e6f3ff,stroke:#0066cc
+    style DANGLE fill:#ffe6e6,stroke:#cc0000,stroke-width:2px
+    style NULL_PTR fill:#ffffe6,stroke:#cccc00
+    style FUNC_PTR fill:#e6ffe6,stroke:#00cc00

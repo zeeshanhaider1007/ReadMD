@@ -1,0 +1,41 @@
+graph LR
+    subgraph "Singly Linked List"
+        direction LR
+        HEAD["HEAD"] --> NODE1["Node 1
+Data: 10
+Next: →"]
+        NODE1 --> NODE2["Node 2
+Data: 20
+Next: →"]
+        NODE2 --> NODE3["Node 3
+Data: 30
+Next: →"]
+        NODE3 --> NULL["NULL
+(end of list)"]
+    end
+    
+    STRUCT["struct Node {
+    int data;
+    struct Node *next;  // Points to next node
+};"]
+    
+    ANALOGY["Everyday Analogy:
+A train: each car is connected only
+to the next car. To reach car 5 you
+must pass through cars 1-4 in order.
+Each car knows ONLY the next one."]
+    
+    PROS["Pros:
+- Dynamic size (grows/shrinks)
+- Fast insert/delete
+Cons:
+- No random access
+- Extra memory for pointers
+- Must traverse from head"]
+    
+    style HEAD fill:#ffe6e6,stroke:#cc0000
+    style NODE1 fill:#e6f3ff,stroke:#0066cc
+    style NODE2 fill:#e6f3ff,stroke:#0066cc
+    style NODE3 fill:#e6f3ff,stroke:#0066cc
+    style NULL fill:#f0f0f0,stroke:#999
+    style STRUCT fill:#ffffe6,stroke:#cccc00

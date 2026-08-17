@@ -1,0 +1,15 @@
+graph TD
+    START["Start"] --> COND{"Condition?<br/>Is temperature &gt; 30?"}
+    COND -->|"Yes / True"| HOT["Wear shorts<br/>Drink water<br/>Stay in shade"]
+    COND -->|"No / False"| COLD["Wear jacket<br/>Drink tea"]
+    HOT --> END["End"]
+    COLD --> END
+    
+    subgraph "In Programming Terms"
+        CODE["if (temp &gt; 30) {<br/>    printf(&quot;Hot!&quot;);<br/>} else {<br/>    printf(&quot;Cold!&quot;);<br/>}"]
+    end
+    
+    style COND fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style HOT fill:#ffe6e6,stroke:#cc0000
+    style COLD fill:#e6ffe6,stroke:#00cc00
+    style CODE fill:#ffffe6,stroke:#cccc00

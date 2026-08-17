@@ -1,0 +1,16 @@
+graph LR
+    subgraph "How a for Loop Iterates"
+        direction LR
+        START["i = 0<br/>(initialization)"] --> CHECK{"i &lt; 5?<br/>(condition)"}
+        CHECK -->|"Yes → true"| BODY["Execute loop body<br/>printf(&quot;%d&quot;, i)<br/>→ prints 0"]
+        BODY --> UPDATE["i++<br/>i becomes 1<br/>(update)"]
+        UPDATE --> CHECK
+        CHECK -->|"When i = 5:<br/>5 &lt; 5 is false"| END["Exit loop<br/>Continue program"]
+    end
+    
+    TRACE["Trace:<br/>i=0 → prints 0 → i=1<br/>i=1 → prints 1 → i=2<br/>i=2 → prints 2 → i=3<br/>i=3 → prints 3 → i=4<br/>i=4 → prints 4 → i=5<br/>i=5 → condition FALSE → exit"]
+    
+    style CHECK fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style BODY fill:#e6ffe6,stroke:#00cc00
+    style END fill:#ffe6e6,stroke:#cc0000
+    style TRACE fill:#ffffe6,stroke:#cccc00

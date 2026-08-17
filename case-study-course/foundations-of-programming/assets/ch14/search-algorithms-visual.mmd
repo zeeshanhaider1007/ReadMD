@@ -1,0 +1,40 @@
+graph TD
+    subgraph "Linear Search vs Binary Search"
+        direction TB
+        LINEAR["LINEAR SEARCH O(n)
+---
+Array: [3, 7, 1, 9, 4, 6, 8, 2, 5]
+Searching for: 9
+
+Step 1: Check arr[0]=3 → No
+Step 2: Check arr[1]=7 → No
+Step 3: Check arr[2]=1 → No
+Step 4: Check arr[3]=9 → FOUND!
+4 steps for 9 elements
+Worst case: 9 steps (all elements)
+SLOW for large arrays!"]
+        
+        BINARY["BINARY SEARCH O(log n)
+---
+Sorted: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+Searching for: 9
+
+Step 1: Check middle = 5 → Too small!
+Step 2: Check middle of right = 7 → Too small!
+Step 3: Check middle = 8 → Too small!
+Step 4: Check 9 → FOUND!
+4 steps for 9 elements
+Worst case: log₂(9) ≈ 4 steps
+VERY FAST! But requires SORTED data"]
+    end
+    
+    ANALOGY["IR Analogy:
+Linear = Calling every UN member alphabetically
+Binary = Calling the Security Council first,
+         then regional groups, then specific countries
+         
+Which is faster?"]
+    
+    style LINEAR fill:#ffe6e6,stroke:#cc0000
+    style BINARY fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style ANALOGY fill:#ffffe6,stroke:#cccc00

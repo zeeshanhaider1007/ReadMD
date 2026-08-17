@@ -1,0 +1,27 @@
+graph TD
+    subgraph "Call Stack - Function Calls"
+        direction TB
+        EMPTY["Stack (top)"] --> MAIN["main()
+- local vars: x, y
+- called: add()"]
+        MAIN --> ADD["add(a, b)
+- local vars: a, b, result
+- called: nothing"]
+        ADD --> ADD_DONE["add() returns
+→ pops off stack"]
+        ADD_DONE --> MAIN2["main() continues
+- uses return value
+- program finishes"]
+        MAIN2 --> EMPTY2["Stack (empty)
+Program ends"]
+    end
+    
+    RULE["Stack Rules:
+1. LIFO - Last In, First Out
+2. Each function call = new frame
+3. Return = frame is destroyed
+4. Local vars live in their frame"]
+    
+    style MAIN fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style ADD fill:#e6ffe6,stroke:#00cc00
+    style RULE fill:#ffffe6,stroke:#cccc00

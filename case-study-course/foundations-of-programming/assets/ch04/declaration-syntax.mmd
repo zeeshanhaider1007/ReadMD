@@ -1,0 +1,19 @@
+graph LR
+    subgraph "Anatomy of a Variable Declaration"
+        direction TB
+        INT["type<br/>int<br/>What kind of data?"] --> NAME["name<br/>age<br/>What do we call it?"]
+        NAME --> EQ["= <br/>(assignment<br/>operator)"]
+        EQ --> VAL["value<br/>25<br/>What's stored?"]
+        VAL --> SEMI[";<br/>(semicolon<br/>statement end)"]
+    end
+    
+    COMPLETE["Complete:<br/>int age = 25;<br/><br/>'Declare an integer variable<br/>named age,<br/>with initial value 25'"]
+    
+    COMPLETE2["Alternative forms:<br/><br/>int age;         // declare only<br/>int age = 25;    // declare + initialize<br/>int a, b, c;     // multiple at once"]
+    
+    style INT fill:#e6ffe6,stroke:#00cc00
+    style NAME fill:#e6f3ff,stroke:#0066cc
+    style VAL fill:#ffffe6,stroke:#cccc00
+    style SEMI fill:#ffe6e6,stroke:#cc0000
+    style COMPLETE fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style COMPLETE2 fill:#e6f3ff,stroke:#0066cc,stroke-dasharray: 5 5

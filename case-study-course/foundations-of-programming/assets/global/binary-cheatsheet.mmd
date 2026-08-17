@@ -1,0 +1,33 @@
+graph LR
+    subgraph "Binary Number System - Base 2"
+        direction LR
+        B7[1<br/>128s] --> B6[1<br/>64s]
+        B6 --> B5[0<br/>32s]
+        B5 --> B4[1<br/>16s]
+        B4 --> B3[0<br/>8s]
+        B3 --> B2[1<br/>4s]
+        B2 --> B1[0<br/>2s]
+        B1 --> B0[1<br/>1s]
+    end
+    
+    VAL["Value = 128 + 64 + 0 + 16 + 0 + 4 + 0 + 1<br/>= 213"]
+    
+    subgraph "Common Prefixes"
+        P1["1 bit = 0 or 1"]
+        P2["1 nibble = 4 bits = 0-15"]
+        P3["1 byte = 8 bits = 0-255"]
+        P4["1 KB = 1024 bytes"]
+        P5["1 MB = 1024 KB"]
+        P6["1 GB = 1024 MB"]
+    end
+
+    B0 --> VAL
+    style B7 fill:#e6ffe6,stroke:#00cc00
+    style B6 fill:#e6ffe6,stroke:#00cc00
+    style B5 fill:#ffe6e6,stroke:#cc0000
+    style B4 fill:#e6ffe6,stroke:#00cc00
+    style B3 fill:#ffe6e6,stroke:#cc0000
+    style B2 fill:#e6ffe6,stroke:#00cc00
+    style B1 fill:#ffe6e6,stroke:#cc0000
+    style B0 fill:#e6ffe6,stroke:#00cc00
+    style VAL fill:#ffffe6,stroke:#cccc00,stroke-width:2px

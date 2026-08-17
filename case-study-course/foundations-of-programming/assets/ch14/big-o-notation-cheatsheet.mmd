@@ -1,0 +1,46 @@
+graph LR
+    subgraph "Big O Notation - Algorithm Efficiency"
+        direction TB
+        O1["O(1) - Constant
+Array access: arr[5]
+Hash table lookup
+FASTEST - instant result"]
+        
+        OL["O(log n) - Logarithmic
+Binary search
+Balanced tree search
+VERY FAST - doubles the data
+adds only 1 step"]
+        
+        ON["O(n) - Linear
+Linear search
+Array traversal
+GOOD - proportional to data"]
+        
+        ONL["O(n log n) - Linearithmic
+Merge sort
+Quick sort (average)
+DECENT - most sorting is here"]
+        
+        ON2["O(n²) - Quadratic
+Bubble sort
+Nested loops
+SLOW - 10 items = 100 steps"]
+        
+        O2N["O(2ⁿ) - Exponential
+Recursive Fibonacci
+Brute force
+VERY SLOW - avoid if possible"]
+    end
+    
+    RULES["Growth Rates (n=1000):
+O(1)    →   1 step
+O(log n) →  10 steps
+O(n)    →  1000 steps
+O(n²)   →  1,000,000 steps!
+O(2ⁿ)   →  ∞ (literally impossible)"]
+    
+    style O1 fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style O2N fill:#ffe6e6,stroke:#cc0000,stroke-width:2px
+    style ON2 fill:#ffcccc,stroke:#ff6600
+    style RULES fill:#ffffe6,stroke:#cccc00,stroke-width:2px

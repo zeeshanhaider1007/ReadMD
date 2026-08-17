@@ -1,0 +1,40 @@
+graph TD
+    subgraph "Memory = Library Book Borrowing (Everyday Analogy)"
+        direction TB
+        LIBRARY["Library Collection
+= Total available memory (RAM)"]
+        
+        BORROW["You request a book
+= malloc(size)
+'We need a book on gardening'
+Returns: shelf location"]
+        
+        READ["You read the book
+= Use the allocated memory
+p[0] to p[4999]"]
+        
+        RETURN["You finish and return the book
+= free(p)
+Book goes back to the shelf"]
+        
+        LOST["Book NEVER returned
+= Memory leak!
+Book stuck forever
+Eventually: no books left!"]
+        
+        DANGLE["Book returned but you still
+send letters to its old shelf
+= Dangling pointer!
+Letters go to the WRONG book!"]
+    end
+    
+    LIBRARY --> BORROW
+    BORROW --> READ
+    READ -->|"Responsible"| RETURN
+    READ -->|"Irresponsible"| LOST
+    RETURN --> DANGLE
+    
+    style BORROW fill:#e6f3ff,stroke:#0066cc
+    style RETURN fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style LOST fill:#ffe6e6,stroke:#cc0000,stroke-width:2px
+    style DANGLE fill:#ffcccc,stroke:#ff0000

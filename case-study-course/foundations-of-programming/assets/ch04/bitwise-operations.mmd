@@ -1,0 +1,30 @@
+graph LR
+    subgraph "Bitwise Operations on unsigned char (1 byte)"
+        direction TB
+
+        A["Value A: 60<br/>Binary: 0011 1100"]
+        B["Value B: 13<br/>Binary: 0000 1101"]
+        
+        A --> AND["A & B = 12<br/>0011 1100<br/>0000 1101<br/>---------<br/>0000 1100<br/>(Both must be 1)"]
+        B --> AND
+        
+        A --> OR["A | B = 61<br/>0011 1100<br/>0000 1101<br/>---------<br/>0011 1101<br/>(At least one is 1)"]
+        B --> OR
+        
+        A --> XOR["A ^ B = 49<br/>0011 1100<br/>0000 1101<br/>---------<br/>0011 0001<br/>(Bits differ)"]
+        B --> XOR
+        
+        A --> NOT["~A = 195<br/>0011 1100<br/>---------<br/>1100 0011<br/>(Flip all bits)"]
+        
+        A --> LEFT["A << 2 = 240<br/>0011 1100 << 2<br/>= 1111 0000<br/>(Shift left, fill 0s)"]
+        
+        A --> RIGHT["A >> 2 = 15<br/>0011 1100 >> 2<br/>= 0000 1111<br/>(Shift right, fill 0s)"]
+    end
+
+    USES["Common Uses:<br/>- Flags & permissions (one byte = 8 flags)<br/>- Fast multiply/divide by powers of 2<br/>- Cryptography & hashing<br/>- Color values (RGBA)<br/>- Hardware registers"]
+
+    style AND fill:#e6f3ff,stroke:#0066cc
+    style OR fill:#e6ffe6,stroke:#00cc00
+    style XOR fill:#ffe6e6,stroke:#cc0000
+    style NOT fill:#ffffe6,stroke:#cccc00
+    style USES fill:#e6f3ff,stroke:#0066cc,stroke-dasharray: 5 5

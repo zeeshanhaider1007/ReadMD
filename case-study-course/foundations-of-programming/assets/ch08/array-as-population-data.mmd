@@ -1,0 +1,30 @@
+graph LR
+    subgraph "Census Data = Array (IR Analogy)"
+        direction LR
+        COUNTRY["Country Data Array
+country[0] = 'China' (1.4B)
+country[1] = 'India' (1.4B)
+country[2] = 'USA' (331M)
+country[3] = 'Indonesia' (273M)
+country[4] = 'Pakistan' (220M)
+...
+country[192] = 'Tuvalu' (12K)"]
+    end
+    
+    subgraph "Processing Census Data"
+        PROCESS["for (int i = 0; i < 193; i++) {
+    printf('%s has %d people',
+           country[i], population[i]);
+}"]
+    end
+    
+    ANALOGY["Why this matters for IR:
+- Population data = array of numbers
+- Country names = array of strings
+- Trade volumes = array of values
+- Voting records = array of booleans
+ALL data in IR can be arrays!"]
+    
+    style COUNTRY fill:#e6f3ff,stroke:#0066cc
+    style PROCESS fill:#e6ffe6,stroke:#00cc00
+    style ANALOGY fill:#ffffe6,stroke:#cccc00,stroke-dasharray:5 5

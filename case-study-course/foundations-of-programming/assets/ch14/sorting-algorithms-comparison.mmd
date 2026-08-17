@@ -1,0 +1,43 @@
+graph TD
+    subgraph "Sorting Algorithms Comparison"
+        direction TB
+        BUBBLE["BUBBLE SORT O(n²)
+Compare adjacent, swap if wrong
+[5,3,8,1] → [3,5,1,8] → [3,1,5,8] → [1,3,5,8]
+Simple but SLOW on large data
+Good for: learning, small arrays"]
+        
+        SELECTION["SELECTION SORT O(n²)
+Find minimum, swap to front
+[5,3,8,1] → [1,3,8,5] → [1,3,5,8]
+Simple, fewer swaps than bubble
+Good for: small arrays, writing to memory"]
+        
+        INSERTION["INSERTION SORT O(n²)
+Insert each element into sorted portion
+[5,3,8,1] → [3,5,8,1] → [3,5,8,1] → [1,3,5,8]
+Fast on nearly-sorted data
+Good for: small or partially sorted arrays"]
+        
+        MERGE["MERGE SORT O(n log n)
+Divide array in half, sort each, merge
+[5,3,8,1,2,7,4,6] → split → merge
+Fast, stable, predictable
+Good for: large data, linked lists"]
+        
+        QUICK["QUICK SORT O(n log n)
+Pick pivot, partition around it, recurse
+[5,3,8,1,2,7,4,6] → pivot=5 → [1,2,5,3,4,6,7,8]
+Fastest average case
+Good for: general purpose, in-memory sort"]
+    end
+    
+    ANALOGY["Everyday Analogy:
+Bubble = Fixing a line of people one swap at a time (slow but steady)
+Merge = Splitting homework into parts, solving each, combining
+Quick = Picking a captain; everyone shorter goes left, taller goes right"]
+    
+    style BUBBLE fill:#ffe6e6,stroke:#cc0000
+    style MERGE fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style QUICK fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style ANALOGY fill:#ffffe6,stroke:#cccc00

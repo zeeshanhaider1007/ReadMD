@@ -1,0 +1,50 @@
+graph TD
+    subgraph "Example Capstone: Survey Feedback Analyzer"
+        direction TB
+        INPUT_FILE["Input: feedback.txt
+'Customer Survey 2025
+Q1: How was the checkout experience?
+Q2: Would you recommend us?
+Q3: Any suggestions for improvement?'"]
+        
+        PARSE["Program PARSES the feedback
+- Reads file line by line
+- Identifies responses, sections
+- Stores in struct Message[]"]
+        
+        ANALYZE["Program ANALYZES:
+- Word frequency analysis
+- Response length statistics
+- Key term detection
+('wait', 'great', 'slow')
+- Sentiment scoring"]
+        
+        OUTPUT_SCREEN["OUTPUT to screen:
+=== Feedback Analysis ===
+File: feedback.txt
+Responses: 12
+Total words: 4,320
+Most used: 'wait' (45 times)
+Satisfaction: Mixed
+Estimated reading time: 15 min"]
+        
+        OUTPUT_FILE["OUTPUT to file:
+analysis_report.txt
+Full detailed report
+Ready for review or sharing"]
+    end
+    
+    INPUT_FILE --> PARSE
+    PARSE --> ANALYZE
+    ANALYZE --> OUTPUT_SCREEN
+    ANALYZE --> OUTPUT_FILE
+    
+    NOTE["This is ONE example.
+Your capstone can be anything
+that uses what you've learned.
+Choose something YOU care about."]
+    
+    style PARSE fill:#e6f3ff,stroke:#0066cc
+    style ANALYZE fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style OUTPUT_SCREEN fill:#ffffe6,stroke:#cccc00
+    style NOTE fill:#f0f0f0,stroke:#999,stroke-dasharray:5 5

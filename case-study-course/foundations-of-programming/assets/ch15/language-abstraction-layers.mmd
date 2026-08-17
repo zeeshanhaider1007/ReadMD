@@ -1,0 +1,52 @@
+graph TD
+    subgraph "Programming Language Abstraction Ladder"
+        direction TB
+        MACHINE["Machine Code (Binary)
+01001010 11001010 00101010
+Directly executed by CPU
+No abstraction at all"]
+        
+        ASM["Assembly Language
+MOV AX, 42
+ADD AX, BX
+1:1 mapping to machine code
+Human-readable mnemonics"]
+        
+        C_LANG["C LANGUAGE
+int x = 42;
+x = x + 10;
+THIS IS WHERE WE LEARN
+- Manual memory management
+- Explicit pointers
+- Everything is VISIBLE"]
+        
+        CPP["C++
+int x = 42;
+cout << x;
+Adds: Classes, OOP, Templates
+Still manual memory (optional)"]
+        
+        HIGH["High-Level Languages
+Python: x = 42
+Java: int x = 42
+JavaScript: let x = 42
+HIDE: memory, types, pointers
+'Just works' (like magic)"]
+    end
+    
+    C_LANG -->|"You are HERE"| C_LANG
+    
+    TEACH["Why learn C first?
+↓
+You understand what Python
+is hiding from you
+↓
+You write better Python
+because you know what's
+REALLY happening"]
+    
+    style MACHINE fill:#ffe6e6,stroke:#cc0000
+    style ASM fill:#e6e6e6,stroke:#999
+    style C_LANG fill:#e6f3ff,stroke:#0066cc,stroke-width:3px
+    style HIGH fill:#e6ffe6,stroke:#00cc00
+    style TEACH fill:#ffffe6,stroke:#cccc00,stroke-width:2px

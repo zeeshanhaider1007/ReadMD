@@ -1,0 +1,537 @@
+{
+  "name": "Foundations of Programming — Course Reading Flow",
+  "description": "A sequential reading flow through all 17 chapters of the Foundations of Programming course (90 sections + 17 chapter quizzes). Start with Chapter 0 and progress through each chapter's sections in order, ending with the Capstone quiz.",
+  "version": "1.0",
+  "connections": [
+    {
+      "source": "00-foundations-before-code/01-what-is-programming.md",
+      "target": "00-foundations-before-code/02-why-c.md",
+      "label": "Ch00 What Is Programming → Why C"
+    },
+    {
+      "source": "00-foundations-before-code/02-why-c.md",
+      "target": "00-foundations-before-code/03-systems-thinking.md",
+      "label": "Ch00 Why C → Systems Thinking"
+    },
+    {
+      "source": "00-foundations-before-code/03-systems-thinking.md",
+      "target": "00-foundations-before-code/04-the-obstacle-course.md",
+      "label": "Ch00 Systems Thinking → The Obstacle Course"
+    },
+    {
+      "source": "00-foundations-before-code/04-the-obstacle-course.md",
+      "target": "00-foundations-before-code/05-how-to-learn-programming.md",
+      "label": "Ch00 The Obstacle Course → How To Learn Programming"
+    },
+    {
+      "source": "00-foundations-before-code/05-how-to-learn-programming.md",
+      "target": "00-foundations-before-code/chapter-quiz.md",
+      "label": "Ch00 How To Learn Programming → Ch00 Quiz"
+    },
+    {
+      "source": "00-foundations-before-code/chapter-quiz.md",
+      "target": "01-how-computers-work/01-binary-and-data.md",
+      "label": "Ch00 Quiz → Ch01 Binary And Data"
+    },
+    {
+      "source": "01-how-computers-work/01-binary-and-data.md",
+      "target": "01-how-computers-work/02-logic-gates.md",
+      "label": "Ch01 Binary And Data → Logic Gates"
+    },
+    {
+      "source": "01-how-computers-work/02-logic-gates.md",
+      "target": "01-how-computers-work/03-the-cpu.md",
+      "label": "Ch01 Logic Gates → The Cpu"
+    },
+    {
+      "source": "01-how-computers-work/03-the-cpu.md",
+      "target": "01-how-computers-work/04-memory-and-storage.md",
+      "label": "Ch01 The Cpu → Memory And Storage"
+    },
+    {
+      "source": "01-how-computers-work/04-memory-and-storage.md",
+      "target": "01-how-computers-work/05-from-logic-to-language.md",
+      "label": "Ch01 Memory And Storage → From Logic To Language"
+    },
+    {
+      "source": "01-how-computers-work/05-from-logic-to-language.md",
+      "target": "01-how-computers-work/chapter-quiz.md",
+      "label": "Ch01 From Logic To Language → Ch01 Quiz"
+    },
+    {
+      "source": "01-how-computers-work/chapter-quiz.md",
+      "target": "02-setting-up-your-tools/01-choosing-a-computer.md",
+      "label": "Ch01 Quiz → Ch02 Choosing A Computer"
+    },
+    {
+      "source": "02-setting-up-your-tools/01-choosing-a-computer.md",
+      "target": "02-setting-up-your-tools/02-installing-a-compiler.md",
+      "label": "Ch02 Choosing A Computer → Installing A Compiler"
+    },
+    {
+      "source": "02-setting-up-your-tools/02-installing-a-compiler.md",
+      "target": "02-setting-up-your-tools/03-the-terminal.md",
+      "label": "Ch02 Installing A Compiler → The Terminal"
+    },
+    {
+      "source": "02-setting-up-your-tools/03-the-terminal.md",
+      "target": "02-setting-up-your-tools/04-your-first-c-program.md",
+      "label": "Ch02 The Terminal → Your First C Program"
+    },
+    {
+      "source": "02-setting-up-your-tools/04-your-first-c-program.md",
+      "target": "02-setting-up-your-tools/05-understanding-compilation.md",
+      "label": "Ch02 Your First C Program → Understanding Compilation"
+    },
+    {
+      "source": "02-setting-up-your-tools/05-understanding-compilation.md",
+      "target": "02-setting-up-your-tools/chapter-quiz.md",
+      "label": "Ch02 Understanding Compilation → Ch02 Quiz"
+    },
+    {
+      "source": "02-setting-up-your-tools/chapter-quiz.md",
+      "target": "03-variables-data-types/01-what-is-a-variable.md",
+      "label": "Ch02 Quiz → Ch03 What Is A Variable"
+    },
+    {
+      "source": "03-variables-data-types/01-what-is-a-variable.md",
+      "target": "03-variables-data-types/02-basic-data-types.md",
+      "label": "Ch03 What Is A Variable → Basic Data Types"
+    },
+    {
+      "source": "03-variables-data-types/02-basic-data-types.md",
+      "target": "03-variables-data-types/03-declaring-and-initializing.md",
+      "label": "Ch03 Basic Data Types → Declaring And Initializing"
+    },
+    {
+      "source": "03-variables-data-types/03-declaring-and-initializing.md",
+      "target": "03-variables-data-types/04-constants-and-literals.md",
+      "label": "Ch03 Declaring And Initializing → Constants And Literals"
+    },
+    {
+      "source": "03-variables-data-types/04-constants-and-literals.md",
+      "target": "03-variables-data-types/05-type-conversion.md",
+      "label": "Ch03 Constants And Literals → Type Conversion"
+    },
+    {
+      "source": "03-variables-data-types/05-type-conversion.md",
+      "target": "03-variables-data-types/06-scope-and-lifetime.md",
+      "label": "Ch03 Type Conversion → Scope And Lifetime"
+    },
+    {
+      "source": "03-variables-data-types/06-scope-and-lifetime.md",
+      "target": "03-variables-data-types/chapter-quiz.md",
+      "label": "Ch03 Scope And Lifetime → Ch03 Quiz"
+    },
+    {
+      "source": "03-variables-data-types/chapter-quiz.md",
+      "target": "04-operators-and-expressions/01-arithmetic-operators.md",
+      "label": "Ch03 Quiz → Ch04 Arithmetic Operators"
+    },
+    {
+      "source": "04-operators-and-expressions/01-arithmetic-operators.md",
+      "target": "04-operators-and-expressions/02-relational-operators.md",
+      "label": "Ch04 Arithmetic Operators → Relational Operators"
+    },
+    {
+      "source": "04-operators-and-expressions/02-relational-operators.md",
+      "target": "04-operators-and-expressions/03-logical-operators.md",
+      "label": "Ch04 Relational Operators → Logical Operators"
+    },
+    {
+      "source": "04-operators-and-expressions/03-logical-operators.md",
+      "target": "04-operators-and-expressions/04-bitwise-operators.md",
+      "label": "Ch04 Logical Operators → Bitwise Operators"
+    },
+    {
+      "source": "04-operators-and-expressions/04-bitwise-operators.md",
+      "target": "04-operators-and-expressions/05-assignment-and-increment.md",
+      "label": "Ch04 Bitwise Operators → Assignment And Increment"
+    },
+    {
+      "source": "04-operators-and-expressions/05-assignment-and-increment.md",
+      "target": "04-operators-and-expressions/chapter-quiz.md",
+      "label": "Ch04 Assignment And Increment → Ch04 Quiz"
+    },
+    {
+      "source": "04-operators-and-expressions/chapter-quiz.md",
+      "target": "05-control-flow/01-boolean-expressions.md",
+      "label": "Ch04 Quiz → Ch05 Boolean Expressions"
+    },
+    {
+      "source": "05-control-flow/01-boolean-expressions.md",
+      "target": "05-control-flow/02-if-else.md",
+      "label": "Ch05 Boolean Expressions → If Else"
+    },
+    {
+      "source": "05-control-flow/02-if-else.md",
+      "target": "05-control-flow/03-switch-case.md",
+      "label": "Ch05 If Else → Switch Case"
+    },
+    {
+      "source": "05-control-flow/03-switch-case.md",
+      "target": "05-control-flow/04-ternary-operator.md",
+      "label": "Ch05 Switch Case → Ternary Operator"
+    },
+    {
+      "source": "05-control-flow/04-ternary-operator.md",
+      "target": "05-control-flow/chapter-quiz.md",
+      "label": "Ch05 Ternary Operator → Ch05 Quiz"
+    },
+    {
+      "source": "05-control-flow/chapter-quiz.md",
+      "target": "06-loops-and-iteration/01-while-loops.md",
+      "label": "Ch05 Quiz → Ch06 While Loops"
+    },
+    {
+      "source": "06-loops-and-iteration/01-while-loops.md",
+      "target": "06-loops-and-iteration/02-for-loops.md",
+      "label": "Ch06 While Loops → For Loops"
+    },
+    {
+      "source": "06-loops-and-iteration/02-for-loops.md",
+      "target": "06-loops-and-iteration/03-do-while-loops.md",
+      "label": "Ch06 For Loops → Do While Loops"
+    },
+    {
+      "source": "06-loops-and-iteration/03-do-while-loops.md",
+      "target": "06-loops-and-iteration/04-loop-control.md",
+      "label": "Ch06 Do While Loops → Loop Control"
+    },
+    {
+      "source": "06-loops-and-iteration/04-loop-control.md",
+      "target": "06-loops-and-iteration/05-nested-loops.md",
+      "label": "Ch06 Loop Control → Nested Loops"
+    },
+    {
+      "source": "06-loops-and-iteration/05-nested-loops.md",
+      "target": "06-loops-and-iteration/chapter-quiz.md",
+      "label": "Ch06 Nested Loops → Ch06 Quiz"
+    },
+    {
+      "source": "06-loops-and-iteration/chapter-quiz.md",
+      "target": "07-functions-the-building-blocks/01-why-functions.md",
+      "label": "Ch06 Quiz → Ch07 Why Functions"
+    },
+    {
+      "source": "07-functions-the-building-blocks/01-why-functions.md",
+      "target": "07-functions-the-building-blocks/02-function-syntax.md",
+      "label": "Ch07 Why Functions → Function Syntax"
+    },
+    {
+      "source": "07-functions-the-building-blocks/02-function-syntax.md",
+      "target": "07-functions-the-building-blocks/03-parameters-and-arguments.md",
+      "label": "Ch07 Function Syntax → Parameters And Arguments"
+    },
+    {
+      "source": "07-functions-the-building-blocks/03-parameters-and-arguments.md",
+      "target": "07-functions-the-building-blocks/04-return-values.md",
+      "label": "Ch07 Parameters And Arguments → Return Values"
+    },
+    {
+      "source": "07-functions-the-building-blocks/04-return-values.md",
+      "target": "07-functions-the-building-blocks/05-scope-and-lifetime.md",
+      "label": "Ch07 Return Values → Scope And Lifetime"
+    },
+    {
+      "source": "07-functions-the-building-blocks/05-scope-and-lifetime.md",
+      "target": "07-functions-the-building-blocks/06-recursion.md",
+      "label": "Ch07 Scope And Lifetime → Recursion"
+    },
+    {
+      "source": "07-functions-the-building-blocks/06-recursion.md",
+      "target": "07-functions-the-building-blocks/chapter-quiz.md",
+      "label": "Ch07 Recursion → Ch07 Quiz"
+    },
+    {
+      "source": "07-functions-the-building-blocks/chapter-quiz.md",
+      "target": "08-arrays-and-strings/01-what-is-an-array.md",
+      "label": "Ch07 Quiz → Ch08 What Is An Array"
+    },
+    {
+      "source": "08-arrays-and-strings/01-what-is-an-array.md",
+      "target": "08-arrays-and-strings/02-declaring-and-accessing.md",
+      "label": "Ch08 What Is An Array → Declaring And Accessing"
+    },
+    {
+      "source": "08-arrays-and-strings/02-declaring-and-accessing.md",
+      "target": "08-arrays-and-strings/03-multidimensional-arrays.md",
+      "label": "Ch08 Declaring And Accessing → Multidimensional Arrays"
+    },
+    {
+      "source": "08-arrays-and-strings/03-multidimensional-arrays.md",
+      "target": "08-arrays-and-strings/04-strings-in-c.md",
+      "label": "Ch08 Multidimensional Arrays → Strings In C"
+    },
+    {
+      "source": "08-arrays-and-strings/04-strings-in-c.md",
+      "target": "08-arrays-and-strings/05-string-functions.md",
+      "label": "Ch08 Strings In C → String Functions"
+    },
+    {
+      "source": "08-arrays-and-strings/05-string-functions.md",
+      "target": "08-arrays-and-strings/chapter-quiz.md",
+      "label": "Ch08 String Functions → Ch08 Quiz"
+    },
+    {
+      "source": "08-arrays-and-strings/chapter-quiz.md",
+      "target": "09-pointers/01-what-is-a-pointer.md",
+      "label": "Ch08 Quiz → Ch09 What Is A Pointer"
+    },
+    {
+      "source": "09-pointers/01-what-is-a-pointer.md",
+      "target": "09-pointers/02-declaring-pointers.md",
+      "label": "Ch09 What Is A Pointer → Declaring Pointers"
+    },
+    {
+      "source": "09-pointers/02-declaring-pointers.md",
+      "target": "09-pointers/03-address-of-operator.md",
+      "label": "Ch09 Declaring Pointers → Address Of Operator"
+    },
+    {
+      "source": "09-pointers/03-address-of-operator.md",
+      "target": "09-pointers/04-dereferencing.md",
+      "label": "Ch09 Address Of Operator → Dereferencing"
+    },
+    {
+      "source": "09-pointers/04-dereferencing.md",
+      "target": "09-pointers/05-pointers-and-arrays.md",
+      "label": "Ch09 Dereferencing → Pointers And Arrays"
+    },
+    {
+      "source": "09-pointers/05-pointers-and-arrays.md",
+      "target": "09-pointers/06-pointer-arithmetic.md",
+      "label": "Ch09 Pointers And Arrays → Pointer Arithmetic"
+    },
+    {
+      "source": "09-pointers/06-pointer-arithmetic.md",
+      "target": "09-pointers/07-pointers-to-pointers.md",
+      "label": "Ch09 Pointer Arithmetic → Pointers To Pointers"
+    },
+    {
+      "source": "09-pointers/07-pointers-to-pointers.md",
+      "target": "09-pointers/08-function-pointers.md",
+      "label": "Ch09 Pointers To Pointers → Function Pointers"
+    },
+    {
+      "source": "09-pointers/08-function-pointers.md",
+      "target": "09-pointers/chapter-quiz.md",
+      "label": "Ch09 Function Pointers → Ch09 Quiz"
+    },
+    {
+      "source": "09-pointers/chapter-quiz.md",
+      "target": "10-memory-management/01-stack-vs-heap.md",
+      "label": "Ch09 Quiz → Ch10 Stack Vs Heap"
+    },
+    {
+      "source": "10-memory-management/01-stack-vs-heap.md",
+      "target": "10-memory-management/02-malloc-and-free.md",
+      "label": "Ch10 Stack Vs Heap → Malloc And Free"
+    },
+    {
+      "source": "10-memory-management/02-malloc-and-free.md",
+      "target": "10-memory-management/03-calloc-and-realloc.md",
+      "label": "Ch10 Malloc And Free → Calloc And Realloc"
+    },
+    {
+      "source": "10-memory-management/03-calloc-and-realloc.md",
+      "target": "10-memory-management/04-memory-leaks.md",
+      "label": "Ch10 Calloc And Realloc → Memory Leaks"
+    },
+    {
+      "source": "10-memory-management/04-memory-leaks.md",
+      "target": "10-memory-management/05-dangling-pointers.md",
+      "label": "Ch10 Memory Leaks → Dangling Pointers"
+    },
+    {
+      "source": "10-memory-management/05-dangling-pointers.md",
+      "target": "10-memory-management/06-valgrind-and-debugging.md",
+      "label": "Ch10 Dangling Pointers → Valgrind And Debugging"
+    },
+    {
+      "source": "10-memory-management/06-valgrind-and-debugging.md",
+      "target": "10-memory-management/chapter-quiz.md",
+      "label": "Ch10 Valgrind And Debugging → Ch10 Quiz"
+    },
+    {
+      "source": "10-memory-management/chapter-quiz.md",
+      "target": "11-structures-and-unions/01-why-structures.md",
+      "label": "Ch10 Quiz → Ch11 Why Structures"
+    },
+    {
+      "source": "11-structures-and-unions/01-why-structures.md",
+      "target": "11-structures-and-unions/02-declaring-and-using.md",
+      "label": "Ch11 Why Structures → Declaring And Using"
+    },
+    {
+      "source": "11-structures-and-unions/02-declaring-and-using.md",
+      "target": "11-structures-and-unions/03-nested-structures.md",
+      "label": "Ch11 Declaring And Using → Nested Structures"
+    },
+    {
+      "source": "11-structures-and-unions/03-nested-structures.md",
+      "target": "11-structures-and-unions/04-pointers-to-structures.md",
+      "label": "Ch11 Nested Structures → Pointers To Structures"
+    },
+    {
+      "source": "11-structures-and-unions/04-pointers-to-structures.md",
+      "target": "11-structures-and-unions/05-unions.md",
+      "label": "Ch11 Pointers To Structures → Unions"
+    },
+    {
+      "source": "11-structures-and-unions/05-unions.md",
+      "target": "11-structures-and-unions/chapter-quiz.md",
+      "label": "Ch11 Unions → Ch11 Quiz"
+    },
+    {
+      "source": "11-structures-and-unions/chapter-quiz.md",
+      "target": "12-file-input-output/01-streams-in-c.md",
+      "label": "Ch11 Quiz → Ch12 Streams In C"
+    },
+    {
+      "source": "12-file-input-output/01-streams-in-c.md",
+      "target": "12-file-input-output/02-reading-text-files.md",
+      "label": "Ch12 Streams In C → Reading Text Files"
+    },
+    {
+      "source": "12-file-input-output/02-reading-text-files.md",
+      "target": "12-file-input-output/03-writing-text-files.md",
+      "label": "Ch12 Reading Text Files → Writing Text Files"
+    },
+    {
+      "source": "12-file-input-output/03-writing-text-files.md",
+      "target": "12-file-input-output/04-binary-file-io.md",
+      "label": "Ch12 Writing Text Files → Binary File Io"
+    },
+    {
+      "source": "12-file-input-output/04-binary-file-io.md",
+      "target": "12-file-input-output/05-error-handling.md",
+      "label": "Ch12 Binary File Io → Error Handling"
+    },
+    {
+      "source": "12-file-input-output/05-error-handling.md",
+      "target": "12-file-input-output/chapter-quiz.md",
+      "label": "Ch12 Error Handling → Ch12 Quiz"
+    },
+    {
+      "source": "12-file-input-output/chapter-quiz.md",
+      "target": "13-data-structures-in-c/01-linked-lists.md",
+      "label": "Ch12 Quiz → Ch13 Linked Lists"
+    },
+    {
+      "source": "13-data-structures-in-c/01-linked-lists.md",
+      "target": "13-data-structures-in-c/02-stacks-and-queues.md",
+      "label": "Ch13 Linked Lists → Stacks And Queues"
+    },
+    {
+      "source": "13-data-structures-in-c/02-stacks-and-queues.md",
+      "target": "13-data-structures-in-c/03-binary-trees.md",
+      "label": "Ch13 Stacks And Queues → Binary Trees"
+    },
+    {
+      "source": "13-data-structures-in-c/03-binary-trees.md",
+      "target": "13-data-structures-in-c/04-hash-tables.md",
+      "label": "Ch13 Binary Trees → Hash Tables"
+    },
+    {
+      "source": "13-data-structures-in-c/04-hash-tables.md",
+      "target": "13-data-structures-in-c/05-graphs.md",
+      "label": "Ch13 Hash Tables → Graphs"
+    },
+    {
+      "source": "13-data-structures-in-c/05-graphs.md",
+      "target": "13-data-structures-in-c/chapter-quiz.md",
+      "label": "Ch13 Graphs → Ch13 Quiz"
+    },
+    {
+      "source": "13-data-structures-in-c/chapter-quiz.md",
+      "target": "14-algorithms-and-problem-solving/01-what-is-an-algorithm.md",
+      "label": "Ch13 Quiz → Ch14 What Is An Algorithm"
+    },
+    {
+      "source": "14-algorithms-and-problem-solving/01-what-is-an-algorithm.md",
+      "target": "14-algorithms-and-problem-solving/02-big-o-notation.md",
+      "label": "Ch14 What Is An Algorithm → Big O Notation"
+    },
+    {
+      "source": "14-algorithms-and-problem-solving/02-big-o-notation.md",
+      "target": "14-algorithms-and-problem-solving/03-searching-algorithms.md",
+      "label": "Ch14 Big O Notation → Searching Algorithms"
+    },
+    {
+      "source": "14-algorithms-and-problem-solving/03-searching-algorithms.md",
+      "target": "14-algorithms-and-problem-solving/04-sorting-algorithms.md",
+      "label": "Ch14 Searching Algorithms → Sorting Algorithms"
+    },
+    {
+      "source": "14-algorithms-and-problem-solving/04-sorting-algorithms.md",
+      "target": "14-algorithms-and-problem-solving/05-recursion-revisited.md",
+      "label": "Ch14 Sorting Algorithms → Recursion Revisited"
+    },
+    {
+      "source": "14-algorithms-and-problem-solving/05-recursion-revisited.md",
+      "target": "14-algorithms-and-problem-solving/chapter-quiz.md",
+      "label": "Ch14 Recursion Revisited → Ch14 Quiz"
+    },
+    {
+      "source": "14-algorithms-and-problem-solving/chapter-quiz.md",
+      "target": "15-how-programming-languages-work/01-the-abstraction-ladder.md",
+      "label": "Ch14 Quiz → Ch15 The Abstraction Ladder"
+    },
+    {
+      "source": "15-how-programming-languages-work/01-the-abstraction-ladder.md",
+      "target": "15-how-programming-languages-work/02-compilers-vs-interpreters.md",
+      "label": "Ch15 The Abstraction Ladder → Compilers Vs Interpreters"
+    },
+    {
+      "source": "15-how-programming-languages-work/02-compilers-vs-interpreters.md",
+      "target": "15-how-programming-languages-work/03-nand2tetris-preview.md",
+      "label": "Ch15 Compilers Vs Interpreters → Nand2tetris Preview"
+    },
+    {
+      "source": "15-how-programming-languages-work/03-nand2tetris-preview.md",
+      "target": "15-how-programming-languages-work/04-type-systems.md",
+      "label": "Ch15 Nand2tetris Preview → Type Systems"
+    },
+    {
+      "source": "15-how-programming-languages-work/04-type-systems.md",
+      "target": "15-how-programming-languages-work/05-paradigms-overview.md",
+      "label": "Ch15 Type Systems → Paradigms Overview"
+    },
+    {
+      "source": "15-how-programming-languages-work/05-paradigms-overview.md",
+      "target": "15-how-programming-languages-work/chapter-quiz.md",
+      "label": "Ch15 Paradigms Overview → Ch15 Quiz"
+    },
+    {
+      "source": "15-how-programming-languages-work/chapter-quiz.md",
+      "target": "16-capstone-project/01-project-overview.md",
+      "label": "Ch15 Quiz → Ch16 Project Overview"
+    },
+    {
+      "source": "16-capstone-project/01-project-overview.md",
+      "target": "16-capstone-project/02-design-document.md",
+      "label": "Ch16 Project Overview → Design Document"
+    },
+    {
+      "source": "16-capstone-project/02-design-document.md",
+      "target": "16-capstone-project/03-implementation.md",
+      "label": "Ch16 Design Document → Implementation"
+    },
+    {
+      "source": "16-capstone-project/03-implementation.md",
+      "target": "16-capstone-project/04-testing-and-debugging.md",
+      "label": "Ch16 Implementation → Testing And Debugging"
+    },
+    {
+      "source": "16-capstone-project/04-testing-and-debugging.md",
+      "target": "16-capstone-project/05-presentation.md",
+      "label": "Ch16 Testing And Debugging → Presentation"
+    },
+    {
+      "source": "16-capstone-project/05-presentation.md",
+      "target": "16-capstone-project/chapter-quiz.md",
+      "label": "Ch16 Presentation → Ch16 Quiz"
+    }
+  ]
+}

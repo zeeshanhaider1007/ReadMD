@@ -1,0 +1,59 @@
+graph TD
+    subgraph "Capstone Project Architecture"
+        direction TB
+        MAIN["main()
+Program entry point
+Handles user interaction
+Coordinates all modules"]
+        
+        INPUT["Input Module
+- Read files (fopen/fgets)
+- Parse command-line args
+- Get user input (scanf)
+Returns: structured data"]
+        
+        PROCESS["Processing Module
+- Core logic/algorithms
+- Data structure operations
+- Calculations & analysis
+Returns: results"]
+        
+        OUTPUT["Output Module
+- Print to terminal (printf)
+- Write to files (fprintf)
+- Format results clearly
+Returns: success/failure"]
+        
+        ERROR["Error Handling
+- Check all return values
+- Validate user input
+- Graceful failure messages
+- Memory cleanup on exit"]
+    end
+    
+    MAIN --> INPUT
+    INPUT --> PROCESS
+    PROCESS --> OUTPUT
+    MAIN -.-> ERROR
+    INPUT -.-> ERROR
+    PROCESS -.-> ERROR
+    OUTPUT -.-> ERROR
+    
+    CAPSTONE["Capstone Goal:
+Build a program that
+USES EVERYTHING you learned:
+- Variables & types
+- Control flow & loops
+- Functions (modular design)
+- Arrays & strings
+- Pointers & memory
+- File I/O
+- Data structures
+- Error handling"]
+    
+    style MAIN fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style INPUT fill:#e6ffe6,stroke:#00cc00
+    style PROCESS fill:#e6ffe6,stroke:#00cc00
+    style OUTPUT fill:#e6ffe6,stroke:#00cc00
+    style ERROR fill:#ffe6e6,stroke:#cc0000
+    style CAPSTONE fill:#ffffe6,stroke:#cccc00,stroke-dasharray:5 5

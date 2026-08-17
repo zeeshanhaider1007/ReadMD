@@ -1,0 +1,15 @@
+graph LR
+    subgraph "From Transistor to Logic Gate"
+        direction TB
+        T1[Transistor<br/>Electronic Switch] --> AND[AND Gate<br/>Both inputs = 1 -> Output 1]
+        T1 --> OR[OR Gate<br/>At least one input = 1 -> Output 1]
+        T1 --> NOT[NOT Gate<br/>Inverts input: 1->0, 0->1]
+        T1 --> NAND[NAND Gate<br/>NOT AND: opposite of AND]
+        AND --> ADDER[Adder Circuit<br/>Adds binary numbers]
+        OR --> MUX[Multiplexer<br/>Selects between inputs]
+        NAND --> CPU[CPU<br/>All logic from NAND gates!]
+    end
+    NOTE["Everything starts with the NAND gate.<br/>From NAND gates, we build<br/>EVERYTHING else."]
+    style NAND fill:#e6ffe6,stroke:#00cc00,stroke-width:3px
+    style CPU fill:#e6f3ff,stroke:#0066cc,stroke-width:3px
+    style T1 fill:#ffe6e6,stroke:#cc0000

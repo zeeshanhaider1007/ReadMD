@@ -1,0 +1,42 @@
+graph TD
+    subgraph "Nested Loop Execution: Multiplication Table"
+        direction TB
+        
+        OUTER["Outer loop: for (row = 1; row <= 3; row++)"]
+        
+        OUTER --> OUTCHECK{"row <= 3?"}
+        
+        OUTCHECK -->|"row=1: true"| INNER1["Inner loop: for (col = 1; col <= 3; col++)"]
+        INNER1 --> INCHECK1{"col <= 3?"}
+        INCHECK1 -->|"1,2,3: true"| PRINT1["Print row × col"]
+        PRINT1 --> INUPDATE1["col++"]
+        INUPDATE1 --> INCHECK1
+        INCHECK1 -->|"col=4: false"| OUTUPDATE1["row++"]
+        
+        OUTCHECK -->|"row=2: true"| INNER2["Inner loop: for (col = 1; col <= 3; col++)"]
+        INNER2 --> INCHECK2{"col <= 3?"}
+        INCHECK2 -->|"1,2,3: true"| PRINT2["Print row × col"]
+        PRINT2 --> INUPDATE2["col++"]
+        INUPDATE2 --> INCHECK2
+        INCHECK2 -->|"col=4: false"| OUTUPDATE2["row++"]
+        
+        OUTCHECK -->|"row=3: true"| INNER3["Inner loop: for (col = 1; col <= 3; col++)"]
+        INNER3 --> INCHECK3{"col <= 3?"}
+        INCHECK3 -->|"1,2,3: true"| PRINT3["Print row × col"]
+        PRINT3 --> INUPDATE3["col++"]
+        INUPDATE3 --> INCHECK3
+        INCHECK3 -->|"col=4: false"| OUTUPDATE3["row++"]
+        
+        OUTUPDATE1 --> OUTCHECK
+        OUTUPDATE2 --> OUTCHECK
+        OUTUPDATE3 --> OUTCHECK
+        OUTCHECK -->|"row=4: false"| EXIT["Exit both loops<br/><br/>Output:<br/>1×1 1×2 1×3<br/>2×1 2×2 2×3<br/>3×1 3×2 3×3"]
+        
+    end
+    
+    KEY["Key Concept:<br/>Inner loop runs COMPLETELY<br/>for EACH iteration of outer loop<br/>Total iterations = outer × inner"]
+    
+    style OUTER fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style INNER1 fill:#e6ffe6,stroke:#00cc00
+    style KEY fill:#ffffe6,stroke:#cccc00,stroke-dasharray:5 5
+    style EXIT fill:#e6f3ff,stroke:#0066cc

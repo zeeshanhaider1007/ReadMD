@@ -1,0 +1,23 @@
+graph LR
+    subgraph "Your IR Brain Already Does This"
+        direction TB
+        IR1[Analyzes Systems<br/>UN, Alliances, Trade] --> IR_COMMON[Same Skill!]
+        IR2[Negotiates Protocols<br/>Treaties, Norms]
+        IR3[Tracks State Changes<br/>Peace -> Conflict]
+        IR4[Interprets Data<br/>GDP, Demographics]
+    end
+    
+    subgraph "Programming requires the same"
+        direction TB
+        CS1[Design Programs<br/>Functions, Modules] --> CS_COMMON[Applied to Code]
+        CS2[Follows Syntax<br/>APIs, Protocols]
+        CS3[Manages Variables<br/>State Transitions]
+        CS4[Works with Data<br/>Types, Structures]
+    end
+    
+    IR_COMMON --> CS_COMMON
+    
+    style IR1 fill:#e6f3ff,stroke:#0066cc
+    style CS1 fill:#e6ffe6,stroke:#00cc00
+    style IR_COMMON fill:#ffffe6,stroke:#cccc00,stroke-width:2px
+    style CS_COMMON fill:#ffffe6,stroke:#cccc00,stroke-width:2px

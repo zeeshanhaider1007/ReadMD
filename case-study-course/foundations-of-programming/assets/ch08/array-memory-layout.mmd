@@ -1,0 +1,28 @@
+graph LR
+    subgraph "Array in Memory - int arr[5] = {10, 20, 30, 40, 50}"
+        direction LR
+        ADDR0["Address: 0x100<br/>arr[0] = 10"] --> ADDR1["Address: 0x104<br/>arr[1] = 20"]
+        ADDR1 --> ADDR2["Address: 0x108<br/>arr[2] = 30"]
+        ADDR2 --> ADDR3["Address: 0x10C<br/>arr[3] = 40"]
+        ADDR3 --> ADDR4["Address: 0x110<br/>arr[4] = 50"]
+    end
+    
+    KEY["Key Facts:
+    - Contiguous memory (no gaps)
+    - Each int = 4 bytes (on most systems)
+    - arr[0] is at the lowest address
+    - arr is the same as &arr[0]
+    - arr + 1 jumps to next element
+    - NO bounds checking! arr[5] is dangerous!"]
+    
+    ZERO["Why zero-indexed?
+    arr[i] = *(arr + i)
+    First element = arr + 0 = arr[0]"]
+    
+    style ADDR0 fill:#e6ffe6,stroke:#00cc00
+    style ADDR1 fill:#e6ffe6,stroke:#00cc00
+    style ADDR2 fill:#e6ffe6,stroke:#00cc00
+    style ADDR3 fill:#e6ffe6,stroke:#00cc00
+    style ADDR4 fill:#e6ffe6,stroke:#00cc00
+    style KEY fill:#ffffe6,stroke:#cccc00,stroke-width:2px
+    style ZERO fill:#e6f3ff,stroke:#0066cc

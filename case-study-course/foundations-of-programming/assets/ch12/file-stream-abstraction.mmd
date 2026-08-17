@@ -1,0 +1,35 @@
+graph LR
+    subgraph "File I/O = Stream Abstraction"
+        direction LR
+        PROGRAM["Your C Program"] --> OPEN["fopen('file.txt', 'r')
+Opens a stream
+Returns FILE* pointer"]
+        OPEN --> READ["fgets(buffer, size, fp)
+Reads data from file
+Line by line or bytes"]
+        READ --> CLOSE["fclose(fp)
+Closes the stream
+Flushes remaining data"]
+        CLOSE --> DONE["Done!"]
+    end
+    
+    subgraph "Three Standard Streams"
+        STDIN["stdin (keyboard)
+scanf(), fgets()"]
+        STDOUT["stdout (screen)
+printf(), puts()"]
+        STDERR["stderr (screen)
+fprintf() - for ERRORS"]
+    end
+    
+    MODES["File Modes:
+'r' - Read
+'w' - Write (overwrites!)
+'a' - Append
+'r+' - Read + Write
+'rb' - Read binary"]
+    
+    style OPEN fill:#e6f3ff,stroke:#0066cc
+    style READ fill:#e6ffe6,stroke:#00cc00
+    style CLOSE fill:#ffcccc,stroke:#cc0000,stroke-width:2px
+    style MODES fill:#ffffe6,stroke:#cccc00

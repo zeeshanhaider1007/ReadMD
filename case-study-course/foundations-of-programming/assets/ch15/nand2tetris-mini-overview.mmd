@@ -1,0 +1,39 @@
+graph LR
+    subgraph "Nand to Tetris - From First Principles"
+        direction LR
+        NAND["NAND Gate
+The ONE primitive
+Everything built from this"] --> LOGIC["Logic Gates
+AND, OR, NOT, XOR
+built from NAND"]
+        LOGIC --> ALU["Arithmetic Logic Unit
+Computes: +, -, &, |
+Heart of computation"]
+        ALU --> CPU["CPU & Memory
+Registers, RAM, Program Counter
+The computer architecture"]
+        CPU --> ASM["Assembly Language
+MOV, ADD, JMP
+Human-readable machine code"]
+        ASM --> VM["Virtual Machine
+Stack-based operations
+PUSH, POP, ADD"]
+        VM --> COMPILER["Compiler
+High-level language (Jack)
+→ VM code"]
+        COMPILER --> OS["Operating System
+Math, Screen, Keyboard
+Memory management"]
+        OS --> TETRIS["TETRIS!
+A complete game running
+on your self-built computer!"]
+    end
+    
+    COURSE["This course = This philosophy
+We learn from the ground UP
+No black boxes. No magic."]
+    
+    style NAND fill:#ffe6e6,stroke:#cc0000,stroke-width:2px
+    style TETRIS fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style CPU fill:#e6f3ff,stroke:#0066cc
+    style COURSE fill:#ffffe6,stroke:#cccc00,stroke-dasharray:5 5

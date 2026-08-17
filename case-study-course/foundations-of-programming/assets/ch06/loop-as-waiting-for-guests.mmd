@@ -1,0 +1,25 @@
+graph TD
+    subgraph "Waiting for Guests = Loop"
+        direction TB
+        START["Guest 1 arrives<br/>(iteration)"] --> CHECK{"Everyone here?<br/>(condition)"}
+        CHECK -->|"No → keep waiting"| WAIT["Wait for next guest<br/>(iteration)"]
+        WAIT --> UPDATE["Check who's arrived<br/>(increment/update)"]
+        UPDATE --> CHECK
+        CHECK -->|"Yes → all here"| DINNER["Start dinner<br/>(exit loop)"]
+    end
+    
+    CODE["In C:
+while (guests_missing) {
+    wait();
+    check_guest_list();
+}
+// Dinner time!"]
+    
+    NOTE["How many rounds?
+- Unknown: while loop
+- Fixed rounds: for loop
+- Must have 1 round: do-while"]
+    
+    style CHECK fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style DINNER fill:#e6ffe6,stroke:#00cc00
+    style CODE fill:#ffffe6,stroke:#cccc00

@@ -1,0 +1,23 @@
+graph TD
+    START["switch(grade)"] --> CASE_A["case 'A':<br/>printf('Excellent');<br/>break;"]
+    START --> CASE_B["case 'B':<br/>printf('Good');<br/>break;"]
+    START --> CASE_C["case 'C':<br/>printf('Average');<br/>break;"]
+    START --> CASE_D["case 'D':<br/>printf('Below Avg');<br/>break;"]
+    START --> CASE_F["case 'F':<br/>printf('Failing');<br/>break;"]
+    START --> DEFAULT["default:<br/>printf('Invalid');<br/>break;"]
+    
+    CASE_A --> END["Next statement after switch"]
+    CASE_B --> END
+    CASE_C --> END
+    CASE_D --> END
+    CASE_F --> END
+    DEFAULT --> END
+    
+    KEY["Key Rules:<br/>1. expression must be integer or char<br/>2. Each 'case' is a possible match<br/>3. 'break' exits the switch<br/>4. 'default' runs if no case matches<br/>5. Missing 'break' = fall-through!"]
+    
+    FALL["Fall-Through Example:<br/><br/>switch(x) {<br/>    case 1:<br/>        printf('One');<br/>        // No break here!<br/>    case 2:<br/>        printf('Two');<br/>        break;<br/>}<br/><br/>If x=1, prints: 'OneTwo'<br/>Execution falls through<br/>to the next case!"]
+    
+    style KEY fill:#e6f3ff,stroke:#0066cc,stroke-dasharray: 5 5
+    style FALL fill:#ffffe6,stroke:#cccc00,stroke-width:2px
+    style DEFAULT fill:#ffe6e6,stroke:#cc0000
+    style CASE_A fill:#e6ffe6,stroke:#00cc00

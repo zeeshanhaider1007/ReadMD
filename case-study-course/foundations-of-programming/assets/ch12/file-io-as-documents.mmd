@@ -1,0 +1,47 @@
+graph TD
+    subgraph "Documents = File I/O (Everyday Analogy)"
+        direction TB
+        DOCUMENT["DOCUMENT
+= File on disk
+Contains: your notes
+Format: plain text"]
+        
+        WRITE["You DRAFT a note
+= fopen('notes.txt', 'w')
+'Opening a blank page'
+Returns: FILE* (the page)"]
+        
+        SAVE["Note SAVED to page
+= fprintf(fp, 'Message...')
+Writing data to the file
+'Writing your thoughts down'"]
+        
+        OPEN["You OPEN the note later
+= fopen('notes.txt', 'r')
+'Opening the page to read'
+Reading the content"]
+        
+        READ["You READ the note
+= fgets(buffer, size, fp)
+Extracting the information
+Line by line"]
+        
+        CLOSE["Notebook CLOSED
+= fclose(fp)
+'Page saved, notebook shut'
+ALWAYS close your files!"]
+    end
+    
+    WRITE --> SAVE --> CLOSE
+    OPEN --> READ --> CLOSE
+    
+    RULES["File I/O Golden Rules:
+1. Always check if fopen() returned NULL
+2. Always fclose() when done
+3. fclose() flushes remaining data
+4. Data may not be written until fclose()!"]
+    
+    style WRITE fill:#e6f3ff,stroke:#0066cc
+    style OPEN fill:#e6ffe6,stroke:#00cc00
+    style CLOSE fill:#ffe6e6,stroke:#cc0000,stroke-width:2px
+    style RULES fill:#ffffe6,stroke:#cccc00

@@ -1,0 +1,36 @@
+graph TD
+    subgraph "Compiler vs Interpreter"
+        direction TB
+        COMPILER["COMPILER (C, C++, Rust)
+Source Code → Compiler → Machine Code → Run
+                ⬇
+Translation ALL at once
+Output: executable file (.exe)
+Faster execution
+Errors shown ALL at once
+Optimized for performance
+You must recompile to see changes"]
+        
+        INTERPRETER["INTERPRETER (Python, JavaScript)
+Source Code → Interpreter
+                ⬇
+    (Run line by line)
+Translation ONE LINE at a time
+Output: runs immediately
+Slower execution
+Errors found as you go
+Easy to test changes quickly
+No separate executable"]
+    end
+    
+    C_IS["C is compiled = You see the WHOLE translation process
+Python is interpreted = Translation is HIDDEN from you
+That's why we learn C FIRST - you see what happens!"]
+    
+    HYBRID["FYI: Some languages (Java, C#) do BOTH!
+Source → Bytecode (compile) → Virtual Machine (interpret)"]
+    
+    style COMPILER fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style INTERPRETER fill:#e6ffe6,stroke:#00cc00
+    style C_IS fill:#ffffe6,stroke:#cccc00,stroke-width:2px
+    style HYBRID fill:#f0f0f0,stroke:#999,stroke-dasharray:5 5

@@ -1,0 +1,31 @@
+graph TD
+    subgraph "Operator Precedence in C"
+        direction TB
+        HIGH["Highest Priority<br/>(evaluated first)"] --> POST["Postfix: ++ -- ( ) [ ] . ->"]
+        POST --> UNA["Unary: + - ! ~ ++ -- (type) * & sizeof"]
+        UNA --> MULT["Multiplicative: * / %"]
+        MULT --> ADD["Additive: + -"]
+        ADD --> SHIFT["Shift: << >>"]
+        SHIFT --> REL["Relational: < > <= >="]
+        REL --> EQ["Equality: == !="]
+        EQ --> BIT["Bitwise AND: &"]
+        BIT --> XOR["Bitwise XOR: ^"]
+        XOR --> OR["Bitwise OR: |"]
+        OR --> LAND["Logical AND: &&"]
+        LAND --> LOR["Logical OR: ||"]
+        LOR --> COND["Conditional: ?:"]
+        COND --> ASSIGN["Assignment: = += -= *= /= %= <<= >>= &= ^= |="]
+        ASSIGN --> COMMA["Comma: ,<br/>(lowest priority)"]
+        LOW["Lowest Priority<br/>(evaluated last)"]
+    end
+    COMMA --> LOW
+        
+    NOTE["Key Rules:<br/>1. Higher = evaluated first<br/>2. Same level = left-to-right (except unary, assignment, conditional = right-to-left)<br/>3. Use parentheses () to override<br/>4. When in doubt: ADD PARENS!"]
+    
+    EXAMPLES["Examples:<br/><br/>a + b * c     → a + (b * c) not (a + b) * c<br/>a << 1 + 2   → a << (1 + 2) not (a << 1) + 2<br/>*p++         → *(p++) not (*p)++<br/>a = b = c    → a = (b = c) right-to-left"]
+    
+    style HIGH fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style LOW fill:#ffe6e6,stroke:#cc0000,stroke-width:2px
+    style COND fill:#ffffe6,stroke:#cccc00
+    style NOTE fill:#e6f3ff,stroke:#0066cc,stroke-dasharray: 5 5
+    style EXAMPLES fill:#ffffe6,stroke:#cccc00,stroke-width:2px

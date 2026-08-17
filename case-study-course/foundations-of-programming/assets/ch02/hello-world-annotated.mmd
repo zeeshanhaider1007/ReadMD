@@ -1,0 +1,14 @@
+graph LR
+    subgraph "Hello, World! - Line by Line"
+        direction TB
+        LINE1["#include &lt;stdio.h&gt;<br/>Tells compiler to include<br/>standard input/output library"]
+        LINE2["int main(void)<br/>Every C program starts here.<br/>'int' means we return a number.<br/>'void' means no inputs."]
+        LINE3["{<br/>Opening brace — start of<br/>the function body"]
+        LINE4["printf(&quot;Hello, World!&quot;);<br/>CALL the printf function.<br/>Pass it the string to print.<br/>A newline character ends the line.<br/>Semicolon ends the statement."]
+        LINE5["return 0;<br/>Tell the OS the program<br/>finished successfully.<br/>0 = success, 1 = error."]
+        LINE6["}<br/>Closing brace — end of<br/>the function body"]
+    end
+    LINE1 --> LINE2 --> LINE3 --> LINE4 --> LINE5 --> LINE6
+    style LINE1 fill:#e6f3ff,stroke:#0066cc
+    style LINE4 fill:#e6ffe6,stroke:#00cc00
+    style LINE5 fill:#ffffe6,stroke:#cccc00

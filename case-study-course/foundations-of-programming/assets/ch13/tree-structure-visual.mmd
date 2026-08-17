@@ -1,0 +1,54 @@
+graph TD
+    subgraph "Binary Tree - Hierarchical Data"
+        direction TB
+        ROOT["Root Node: 50
+(Secretary General)"]
+        
+        LEFT["Left Child: 30
+(Under-Secretary
+Political Affairs)"]
+        
+        RIGHT["Right Child: 70
+(Under-Secretary
+Peace Operations)"]
+        
+        LLEFT["Left-Left: 20
+(Director Asia)"]
+        
+        LRIGHT["Left-Right: 40
+(Director Africa)"]
+        
+        RLEFT["Right-Left: 60
+(Director Europe)"]
+        
+        RRIGHT["Right-Right: 80
+(Director Americas)"]
+    end
+    
+    ROOT --> LEFT
+    ROOT --> RIGHT
+    LEFT --> LLEFT
+    LEFT --> LRIGHT
+    RIGHT --> RLEFT
+    RIGHT --> RRIGHT
+    
+    STRUCT["struct TreeNode {
+    int data;
+    struct TreeNode *left;
+    struct TreeNode *right;
+};"]
+    
+    RULES["Tree Rules:
+- Each node has ≤ 2 children
+- Left child < parent
+- Right child > parent
+- Searching is O(log n) - FAST!"]
+    
+    style ROOT fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style LEFT fill:#e6ffe6,stroke:#00cc00
+    style RIGHT fill:#e6ffe6,stroke:#00cc00
+    style LLEFT fill:#e6ffe6,stroke:#00cc00
+    style LRIGHT fill:#e6ffe6,stroke:#00cc00
+    style RLEFT fill:#e6ffe6,stroke:#00cc00
+    style RRIGHT fill:#e6ffe6,stroke:#00cc00
+    style STRUCT fill:#ffffe6,stroke:#cccc00

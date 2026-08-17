@@ -1,0 +1,21 @@
+graph TD
+    subgraph "AND (&&) - Both must be true"
+        AND_TT["true && true = true<br/>true && false = false<br/>false && true = false<br/>false && false = false"]
+    end
+    
+    subgraph "OR (||) - At least one true"
+        OR_TT["true || true = true<br/>true || false = true<br/>false || true = true<br/>false || false = false"]
+    end
+    
+    subgraph "NOT (!) - Reverses value"
+        NOT_TT["!true = false<br/>!false = true"]
+    end
+    
+    subgraph "In C, truth is numeric"
+        C_RULE["ANY non-zero value = true<br/>ZERO = false<br/>if(5) → true!<br/>if(0) → false!"]
+    end
+    
+    style AND_TT fill:#e6ffe6,stroke:#00cc00
+    style OR_TT fill:#e6f3ff,stroke:#0066cc
+    style NOT_TT fill:#ffe6e6,stroke:#cc0000
+    style C_RULE fill:#ffffe6,stroke:#cccc00,stroke-width:2px

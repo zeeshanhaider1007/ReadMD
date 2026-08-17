@@ -1,0 +1,40 @@
+graph TD
+    subgraph "Hash Table - Key-Value Lookup"
+        direction TB
+        INPUT["Name (Key)
+'Maya'"] --> HASH["HASH FUNCTION
+Converts key to array index
+hash('Maya') = index 7"]
+        HASH --> BUCKET["BUCKET[7]
+Stores: {'Maya', '555-0101'}
+Data: (Key, Value) pair"]
+    end
+    
+    subgraph "Phone Book = Hash Table"
+        DIR["Phone Book
+(Who → What number?)"]
+        DIR --> E1["'Maya' → 555-0101
+'Liam' → 555-0134
+'Sofia' → 555-0172
+'Ali' → 555-0198
+..."]
+    end
+    
+    CODE["struct Entry {
+    char key[50];
+    char value[100];
+};
+struct Entry table[100];
+// hash('Maya') = 7
+// table[7] = {'Maya', '555-0101'}"]
+    
+    ANALOGY["Everyday Analogy:
+Name → Phone number
+Word → Definition
+That's a hash table!
+O(1) lookup - INSTANT!"]
+    
+    style INPUT fill:#e6f3ff,stroke:#0066cc
+    style HASH fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style BUCKET fill:#e6ffe6,stroke:#00cc00
+    style ANALOGY fill:#ffffe6,stroke:#cccc00

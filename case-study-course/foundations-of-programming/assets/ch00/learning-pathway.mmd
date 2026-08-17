@@ -1,0 +1,164 @@
+flowchart TD
+    START([START HERE]) --> PHASE1
+    
+    %% Phase I: Foundation
+    subgraph PHASE1["Phase I: Foundation (No coding yet)"]
+        direction TB
+        CH00["Ch00: Foundations Before Code
+        What is programming?
+        Why C?
+        Systems thinking
+        Learning strategies"]
+        CH01["Ch01: How Computers Work
+        Binary & data
+        Logic gates
+        CPU: Fetch-Decode-Execute
+        Memory hierarchy
+        Abstraction layers"]
+        CH02["Ch02: Setting Up Your Tools
+        Install a compiler
+        Terminal basics
+        Your first C program
+        Hello World explained"]
+    end
+    
+    %% Phase II: C Language
+    subgraph PHASE2["Phase II: The C Language"]
+        direction TB
+        CH03["Ch03: Variables & Data Types
+        int, float, char, double
+        Declaration & initialization
+        Type conversion"]
+        CH04["Ch04: Operators & Expressions
+        Arithmetic, relational
+        Logical, bitwise
+        Assignment & increment"]
+        CH05["Ch05: Control Flow
+        if/else, switch
+        Boolean expressions
+        Decision making"]
+        CH06["Ch06: Loops & Iteration
+        while, for, do-while
+        break, continue
+        Nested loops"]
+        CH07["Ch07: Functions
+        Parameters & return
+        Scope & lifetime
+        Recursion"]
+        CH08["Ch08: Arrays & Strings
+        Contiguous memory
+        String functions
+        Multi-dimensional"]
+        CH09["Ch09: ⭐ POINTERS ⭐
+        Addresses & dereferencing
+        Pointer arithmetic
+        Pointers & arrays
+        Function pointers"]
+        CH10["Ch10: Memory Management
+        Stack vs Heap
+        malloc & free
+        Memory leaks
+        Valgrind"]
+        CH11["Ch11: Structures & Unions
+        Struct, typedef
+        Nested structures
+        Memory layout"]
+        CH12["Ch12: File I/O
+        fopen, fclose
+        Reading & writing
+        Binary vs text"]
+    end
+    
+    %% Phase III: Data Structures
+    subgraph PHASE3["Phase III: Data Structures & Algorithms"]
+        direction TB
+        CH13["Ch13: Data Structures
+        Linked lists
+        Stacks & queues
+        Trees & hash tables
+        Graphs"]
+        CH14["Ch14: Algorithms
+        Big O notation
+        Searching & sorting
+        Divide & conquer
+        Recursion revisited"]
+    end
+    
+    %% Phase IV: Big Picture
+    subgraph PHASE4["Phase IV: Big Picture"]
+        direction TB
+        CH15["Ch15: How Languages Work
+        Compilers vs interpreters
+        Type systems
+        Programming paradigms
+        Where C fits in"]
+    end
+    
+    %% Phase V: Capstone
+    subgraph PHASE5["Phase V: Capstone"]
+        direction TB
+        CH16["Ch16: Capstone Project
+        Design → Implement
+        Test → Debug
+        Present your creation!
+        USE EVERYTHING YOU LEARNED"]
+    end
+    
+    FINISH([🎉 COURSE COMPLETE!]) --> AFTER
+    AFTER["What's next?
+    - Learn Python/JavaScript
+    - OSSU CS curriculum
+    - Build your own projects
+    - You're a programmer now!"]
+    
+    %% Connections between phases
+    START --> PHASE1
+    PHASE1 --> PHASE2
+    PHASE2 --> PHASE3
+    PHASE3 --> PHASE4
+    PHASE4 --> PHASE5
+    PHASE5 --> FINISH
+    
+    %% Internal connections
+    CH00 --> CH01
+    CH01 --> CH02
+    CH02 --> CH03
+    CH03 --> CH04
+    CH04 --> CH05
+    CH05 --> CH06
+    CH06 --> CH07
+    CH07 --> CH08
+    CH08 -.->|"Foundation for"| CH09
+    CH09 --> CH10
+    CH10 --> CH11
+    CH11 --> CH12
+    CH12 --> CH13
+    CH13 --> CH14
+    CH14 --> CH15
+    CH15 --> CH16
+    CH16 --> FINISH
+    
+    %% Milestones
+    style START fill:#e6ffe6,stroke:#00cc00,stroke-width:3px
+    style FINISH fill:#e6ffe6,stroke:#00cc00,stroke-width:3px
+    style AFTER fill:#e6f3ff,stroke:#0066cc,stroke-dasharray:5 5
+    style CH09 fill:#ffe6e6,stroke:#cc0000,stroke-width:3px
+    style CH16 fill:#ffffe6,stroke:#cccc00,stroke-width:3px
+    
+    %% Phase styling
+    style PHASE1 fill:#e6f3ff,stroke:#0066cc
+    style PHASE2 fill:#e6ffe6,stroke:#00cc00
+    style PHASE3 fill:#ffffe6,stroke:#cccc00
+    style PHASE4 fill:#f0e6ff,stroke:#9900cc
+    style PHASE5 fill:#ffe6f0,stroke:#cc0066
+    
+    %% Key insights
+    KEY1["⭐ Ch09 (Pointers) is the hardest chapter
+    — but the most important.
+    Everyone struggles here. It's normal."]
+    
+    KEY2["🕐 Total: ~150-220 hours
+    at 10 hrs/week = 4-5 months"]
+    
+    KEY1 -.-> CH09
+    KEY2 -.-> FINISH

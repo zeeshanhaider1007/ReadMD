@@ -1,0 +1,47 @@
+graph TD
+    subgraph "Pointers = House Addresses"
+        direction TB
+        HOUSE["🏠 Actual House
+= Variable x
+Contains: Resident (value)
+Located at: 45 Maple Street (address)"]
+        
+        ADDRESS_CARD["📇 Address Card
+= Pointer p
+Contains: '45 Maple Street'
+NOT the house itself!
+Just tells you WHERE it is"]
+        
+        CARD_COPY["📇 Copy of Address
+= Another pointer q = p
+SAME address, SAME house
+Both point to the same place"]
+        
+        FOLLOW["🚶 Follow the address
+= Dereference *p
+Go to 45 Maple Street
+Enter the house
+Meet the Resident (get value)"]
+        
+        REDIRECT["📋 Update through pointer
+= *p = NewResident
+Change who's inside
+The house (x) changes!
+Everyone with the address sees it"]
+    end
+    
+    HOUSE --> ADDRESS_CARD
+    ADDRESS_CARD --> CARD_COPY
+    CARD_COPY --> FOLLOW
+    FOLLOW --> REDIRECT
+    
+    RULE["Pointer Rules:
+1. & gives you the address
+2. * follows the address
+3. Copying a pointer = copying the address
+4. Changing *p changes the original variable"]
+    
+    style HOUSE fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style ADDRESS_CARD fill:#e6f3ff,stroke:#0066cc
+    style FOLLOW fill:#ffffe6,stroke:#cccc00
+    style RULE fill:#f0f0f0,stroke:#999,stroke-dasharray:5 5

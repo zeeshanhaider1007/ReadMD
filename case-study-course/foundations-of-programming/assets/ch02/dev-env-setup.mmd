@@ -1,0 +1,20 @@
+graph TD
+    subgraph "Setting Up Your C Development Environment"
+        direction TB
+        START[Start Here] --> OS{What OS?}
+        OS -->|Windows| WIN[Install MinGW-w64<br/>Or use WSL]
+        OS -->|Mac| MAC[Install Xcode CLI Tools<br/>xcode-select --install]
+        OS -->|Linux| LIN[sudo apt install gcc<br/>Already have it!]
+        WIN --> GCC[GCC Installed?]
+        MAC --> GCC
+        LIN --> GCC
+        GCC -->|Test it| TEST[gcc --version<br/>Should show version number]
+        TEST --> EDITOR[Choose Editor<br/>VS Code - recommended<br/>Or any text editor]
+        EDITOR --> EXT[VS Code Extensions<br/>C/C++ by Microsoft<br/>Code Runner]
+        EXT --> READY[Ready to Code!]
+    end
+    ALT["No installation?<br/>Use online sandbox:<br/>replit.com<br/>onlinegdb.com"]
+    READY -.-> ALT
+    style READY fill:#e6ffe6,stroke:#00cc00,stroke-width:3px
+    style GCC fill:#ffffe6,stroke:#cccc00
+    style ALT fill:#e6f3ff,stroke:#0066cc,stroke-dasharray: 5 5

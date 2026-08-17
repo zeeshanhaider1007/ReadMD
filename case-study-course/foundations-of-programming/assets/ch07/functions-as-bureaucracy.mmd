@@ -1,0 +1,28 @@
+graph TD
+    subgraph "Restaurant = Program, Departments = Functions"
+        direction TB
+        RESTAURANT[Restaurant<br/>= Your Program] --> KITCHEN[Kitchen<br/>Prepares dishes<br/>Input: food order<br/>Output: cooked meal]
+        RESTAURANT --> SERVICE[Service Team<br/>Takes orders at tables<br/>Input: customer order<br/>Output: served table]
+        RESTAURANT --> BAR[Bar<br/>Makes drinks<br/>Input: drink order<br/>Output: finished drink]
+        RESTAURANT --> ADMIN[Admin<br/>Manages budget, staff<br/>Input: resource request<br/>Output: allocated resources]
+    end
+    
+    NOTE["Why departments (functions)?
+- Each has a CLEAR purpose
+- Specialized expertise
+- Can work independently
+- Can be replaced/updated
+- Main restaurant just COORDINATES"]
+    
+    CODE["void take_order(char* customer) {
+    // This function handles ONE thing
+    confirm_items(customer);
+    check_stock(customer);
+    return order_confirmed;
+}"]
+    
+    style RESTAURANT fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style KITCHEN fill:#e6ffe6,stroke:#00cc00
+    style SERVICE fill:#e6ffe6,stroke:#00cc00
+    style NOTE fill:#ffffe6,stroke:#cccc00
+    style CODE fill:#f0f0f0,stroke:#999,stroke-dasharray:5 5

@@ -1,0 +1,13 @@
+graph TD
+    subgraph "How Hello World Gets Compiled"
+        direction TB
+        SRC["hello.c<br/>Your Source Code"] --> PRE["Preprocessing<br/>#include pulls in stdio.h<br/>~2000 lines added!"]
+        PRE --> COMP["Compilation<br/>C code -> Assembly language<br/>translates to CPU instructions"]
+        COMP --> ASM["Assembly -> Object File<br/>hello.o - machine code<br/>but NOT runnable yet"]
+        ASM --> LINK["Linking<br/>Linker combines hello.o + libraries<br/>Resolves printf address"]
+        LIB["Standard Library<br/>libc.a / libc.so<br/>contains printf code"] --> LINK
+        LINK --> EXE["Executable<br/>hello.exe / a.out<br/>Ready to run!"]
+    end
+    style SRC fill:#e6ffe6,stroke:#00cc00
+    style EXE fill:#e6f3ff,stroke:#0066cc,stroke-width:3px
+    style COMP fill:#ffffe6,stroke:#cccc00

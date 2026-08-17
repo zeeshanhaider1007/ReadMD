@@ -1,0 +1,24 @@
+graph LR
+    subgraph "Von Neumann Architecture"
+        direction LR
+        CPU[CPU<br/>Central Processing Unit] --> CU[Control Unit]
+        CPU --> ALU[ALU<br/>Arithmetic Logic Unit]
+        CPU --> REG[Registers]
+        
+        MEM[(Memory<br/>RAM)]
+        
+        I_IN[Input Devices<br/>Keyboard, Mouse]
+        I_OUT[Output Devices<br/>Monitor, Printer]
+        STOR[Storage<br/>Disk Drive]
+    end
+    
+    CPU <-->|Data & Address Bus| MEM
+    I_IN --> CPU
+    CPU --> I_OUT
+    MEM <--> STOR
+    
+    B1["Key Insight:<br/>Program instructions AND data<br/>live in the SAME memory"]
+    
+    style CPU fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style MEM fill:#fff3e6,stroke:#cc6600,stroke-width:2px
+    style B1 fill:#f0f0f0,stroke:#999,stroke-dasharray: 5 5

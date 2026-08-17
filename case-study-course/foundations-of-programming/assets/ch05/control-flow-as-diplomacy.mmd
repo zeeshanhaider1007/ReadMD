@@ -1,0 +1,17 @@
+graph TD
+    subgraph "Control Flow = Diplomacy"
+        direction TB
+        NEGOTIATION["Begin Negotiation"] --> VETO{"Veto?<br/>Does any P5 member<br/>object?"}
+        VETO -->|"Yes"| BLOCKED["Resolution Blocked<br/>(else branch)"]
+        VETO -->|"No"| PASSES["Resolution Passes<br/>(then branch)"]
+        BLOCKED --> REVIEW["Review Objections<br/>(loop back to negotiate)"]
+        REVIEW --> NEGOTIATION
+        PASSES --> IMPLEMENT["Implement Resolution<br/>(end)"]
+    end
+    
+    CODE_EXAMPLE["In C:<br/>if (veto == 0) {<br/>    // Resolution passes<br/>} else {<br/>    // Resolution blocked<br/>    // Loop back to renegotiate<br/>}"]
+    
+    style VETO fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style BLOCKED fill:#ffe6e6,stroke:#cc0000
+    style PASSES fill:#e6ffe6,stroke:#00cc00
+    style CODE_EXAMPLE fill:#ffffe6,stroke:#cccc00

@@ -1,0 +1,29 @@
+graph LR
+    subgraph "String = Array of Characters + Null Terminator"
+        direction LR
+        CHAR0["Index [0]: 'H'<br/>ASCII: 72<br/>Address: 0x200"]
+        CHAR1["Index [1]: 'e'<br/>ASCII: 101<br/>Address: 0x201"]
+        CHAR2["Index [2]: 'l'<br/>ASCII: 108<br/>Address: 0x202"]
+        CHAR3["Index [3]: 'l'<br/>ASCII: 108<br/>Address: 0x203"]
+        CHAR4["Index [4]: 'o'<br/>ASCII: 111<br/>Address: 0x204"]
+        NULLC["Index [5]: '\0'<br/>NULL terminator<br/>Address: 0x205<br/>MARKS THE END"]
+    end
+    
+    DECL["Declaration:
+    char str[6] = {'H','e','l','l','o','\0'};
+    OR
+    char str[] = 'Hello';  // auto-adds \0"]
+    
+    FUNCS["String functions (from <string.h>):
+    strlen(str)  → 5 (NOT counting \0)
+    strcpy(dest, src)
+    strcmp(str1, str2)
+    strcat(dest, src)"]
+    
+    WARN["⚠️ CRITICAL:
+    Must leave room for \0!
+    'Hello' needs 6 bytes, not 5!"]
+    
+    style NULLC fill:#ffe6e6,stroke:#cc0000,stroke-width:2px
+    style DECL fill:#e6f3ff,stroke:#0066cc
+    style WARN fill:#ffcccc,stroke:#ff0000,stroke-width:2px

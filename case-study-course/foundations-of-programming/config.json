@@ -1,0 +1,255 @@
+{
+  "course": {
+    "title": "Foundations of Programming: From First Principles to Practical Mastery",
+    "subtitle": "A Ground-Up Course for the Complete Beginner",
+    "short_title": "Foundations of Programming",
+    "version": "1.0.0",
+    "language": "en",
+    "license": "CC-BY-NC-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "homepage": "./README.md",
+    "primary_language": "C",
+    "c_standard": "c99"
+  },
+  "metadata": {
+    "author": {
+      "name": "Course Author",
+      "role": "Instructional Designer",
+      "email": "",
+      "website": ""
+    },
+    "target_audience": {
+      "background": "Non-STEM, zero programming experience",
+      "degree_example": "International Relations",
+      "skill_level": "Absolute beginner",
+      "description": "Learners with NO prior programming knowledge, coming from non-STEM fields (Humanities, Social Sciences, Law, Arts, etc.)"
+    },
+    "created": "2026-07-22",
+    "last_updated": "2026-07-22",
+    "total_hours_estimate": "150–220",
+    "recommended_pace_hours_per_week": 10,
+    "estimated_duration_months": "4–5"
+  },
+  "prerequisites": {
+    "hardware": {
+      "minimum": {
+        "ram_gb": 4,
+        "disk_gb": 5,
+        "notes": "Any computer manufactured in the last 10 years will work"
+      },
+      "recommended": {
+        "ram_gb": 8,
+        "disk_gb": 10
+      },
+      "os": ["Windows 10+", "macOS 10.15+", "Linux (any modern distribution)"]
+    },
+    "software": {
+      "compiler": {
+        "name": "GCC",
+        "install_guide": {
+          "windows": "Install MinGW-w64 from https://www.mingw-w64.org/",
+          "macos": "Install Xcode Command Line Tools via `xcode-select --install`",
+          "linux": "Install via package manager: `sudo apt install gcc` (Debian/Ubuntu) or `sudo dnf install gcc` (Fedora)"
+        }
+      },
+      "editor": {
+        "primary": "VS Code (recommended)",
+        "alternatives": ["Sublime Text", "vim", "emacs", "Code::Blocks", "CLion"],
+        "extensions_recommended": ["C/C++ (ms-vscode.cpptools)", "Code Runner"]
+      },
+      "debugging_tools": {
+        "linux_mac": "valgrind",
+        "windows": "DrMemory",
+        "install_guide": {
+          "valgrind_linux": "`sudo apt install valgrind`",
+          "valgrind_macos": "`brew install valgrind`",
+          "drmemory_windows": "Download from https://drmemory.org/"
+        }
+      },
+      "version_control": "Git (optional but recommended)",
+      "online_sandbox_alternatives": ["https://replit.com/", "https://www.onlinegdb.com/", "https://godbolt.org/"]
+    },
+    "knowledge": "None. No prior programming experience required. Basic computer literacy (using a web browser, saving files, navigating file system) is assumed.",
+    "math": "Basic arithmetic only (addition, subtraction, multiplication, division). No algebra, no calculus, no trigonometry required."
+  },
+  "global_settings": {
+    "compiler_flags": {
+      "c_standard": "-std=c99",
+      "warnings": ["-Wall", "-Wextra", "-Wpedantic", "-Werror"],
+      "optimization": "-O0",
+      "debugging": "-g",
+      "full_command": "gcc -std=c99 -Wall -Wextra -Wpedantic -Werror -g -O0 program.c -o program"
+    },
+    "naming_conventions": {
+      "variables": "snake_case",
+      "functions": "snake_case",
+      "constants": "UPPER_SNAKE_CASE",
+      "types_typedef": "PascalCase",
+      "file_names": "kebab-case",
+      "description": "snake_case means words separated by underscores like_this. PascalCase means each word capitalizes first letter LikeThis."
+    },
+    "style_guide": {
+      "indentation": "4 spaces (no tabs)",
+      "max_line_length": 80,
+      "braces": "K&R style (opening brace on same line as statement)",
+      "spacing": "One space between keyword and parenthesis: `if (condition)` not `if(condition)`",
+      "comments": "Use // for single-line, /* */ for multi-line. Always explain WHY not WHAT."
+    }
+  },
+  "structure": {
+    "total_chapters": 17,
+    "total_sections": 82,
+    "total_quizzes": 17,
+    "phases": [
+      {
+        "id": 1,
+        "name": "Foundation",
+        "chapters": [0, 1, 2],
+        "description": "Building mental models of computation before writing code",
+        "hours_estimate": "15–20"
+      },
+      {
+        "id": 2,
+        "name": "The C Language",
+        "chapters": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+        "description": "Mastering programming fundamentals through the transparent lens of C",
+        "hours_estimate": "80–120"
+      },
+      {
+        "id": 3,
+        "name": "Data Structures & Algorithms",
+        "chapters": [13, 14],
+        "description": "Organizing data and solving problems efficiently",
+        "hours_estimate": "30–40"
+      },
+      {
+        "id": 4,
+        "name": "The Big Picture",
+        "chapters": [15],
+        "description": "Understanding the landscape — how higher-level languages and paradigms build on C",
+        "hours_estimate": "8–10"
+      },
+      {
+        "id": 5,
+        "name": "Capstone",
+        "chapters": [16],
+        "description": "Building a complete, meaningful program from scratch",
+        "hours_estimate": "20–30"
+      }
+    ],
+    "chapters": [
+      {"number": 0,  "folder": "00-foundations-before-code",     "title": "Foundations Before Code",             "phase": 1, "sections": 5},
+      {"number": 1,  "folder": "01-how-computers-work",          "title": "How Computers Work",                  "phase": 1, "sections": 5},
+      {"number": 2,  "folder": "02-setting-up-your-tools",       "title": "Setting Up Your Tools",              "phase": 1, "sections": 5},
+      {"number": 3,  "folder": "03-variables-data-types",        "title": "Variables & Data Types",             "phase": 2, "sections": 6},
+      {"number": 4,  "folder": "04-operators-and-expressions",   "title": "Operators & Expressions",            "phase": 2, "sections": 5},
+      {"number": 5,  "folder": "05-control-flow",                "title": "Control Flow",                       "phase": 2, "sections": 4},
+      {"number": 6,  "folder": "06-loops-and-iteration",         "title": "Loops & Iteration",                  "phase": 2, "sections": 5},
+      {"number": 7,  "folder": "07-functions-the-building-blocks", "title": "Functions — The Building Blocks",  "phase": 2, "sections": 6},
+      {"number": 8,  "folder": "08-arrays-and-strings",          "title": "Arrays & Strings",                   "phase": 2, "sections": 5},
+      {"number": 9,  "folder": "09-pointers",                    "title": "Pointers",                           "phase": 2, "sections": 8},
+      {"number": 10, "folder": "10-memory-management",           "title": "Memory Management",                  "phase": 2, "sections": 6},
+      {"number": 11, "folder": "11-structures-and-unions",       "title": "Structures & Unions",                "phase": 2, "sections": 5},
+      {"number": 12, "folder": "12-file-input-output",           "title": "File Input / Output",                "phase": 2, "sections": 5},
+      {"number": 13, "folder": "13-data-structures-in-c",        "title": "Data Structures in C",               "phase": 3, "sections": 5},
+      {"number": 14, "folder": "14-algorithms-and-problem-solving", "title": "Algorithms & Problem Solving",    "phase": 3, "sections": 5},
+      {"number": 15, "folder": "15-how-programming-languages-work", "title": "How Programming Languages Work",   "phase": 4, "sections": 5},
+      {"number": 16, "folder": "16-capstone-project",            "title": "Capstone Project",                   "phase": 5, "sections": 5}
+    ]
+  },
+  "assessment": {
+    "quiz_types": [
+      "multiple-choice",
+      "fill-in-the-blank",
+      "code-tracing",
+      "debug-finding",
+      "short-answer"
+    ],
+    "question_types": [
+      "multiple-choice",
+      "code-tracing",
+      "debugging",
+      "short-answer",
+      "fill-in-the-blank"
+    ],
+    "project_types": [
+      "guided-exercises",
+      "mini-projects",
+      "capstone-project"
+    ],
+    "passing_criteria": {
+      "quizzes": "70% correct to proceed",
+      "projects": "Must compile without errors and pass basic test cases",
+      "capstone": "Must compile, run, and be presented with written reflection"
+    },
+    "grading": {
+      "quizzes": "self-assessed via answer key",
+      "projects": "self-assessed via provided test cases",
+      "capstone": "self-assessed via rubric"
+    }
+  },
+  "pedagogy": {
+    "techniques": [
+      "Analogical scaffolding (IR concepts → programming concepts)",
+      "Subgoal labeling (annotated code examples)",
+      "Parsons problems (rearranging scrambled code before blank-screen coding)",
+      "Worked examples with explicit reasoning",
+      "Learning journaling",
+      "Spaced repetition of pointer concepts",
+      "Error deconstruction sessions"
+    ],
+    "section_structure": [
+      "Learning Objectives",
+      "The Big Picture (analogy-first)",
+      "Core Content (annotated code examples)",
+      "Try It Yourself (exercise)",
+      "Common Pitfalls",
+      "Connections to What You Know (IR connections)",
+      "Section Checklist"
+    ]
+  },
+  "assets": {
+    "dir": "assets/",
+    "subdirs": {
+      "global": "Diagrams used across the entire course (memory model, architecture, compilation pipeline)",
+      "ch00": "Foundations and motivation visuals",
+      "ch01": "Binary, logic gates, CPU cycle, memory hierarchy",
+      "ch02": "Compiler setup, terminal basics, Hello World annotations",
+      "ch03": "Memory cabinet analogy, type sizes, variable lifetime",
+      "ch04": "Operator precedence chart, truth tables",
+      "ch05": "Decision trees, control flow diagrams",
+      "ch06": "Loop types comparison, iteration visualization",
+      "ch07": "Call stack, scope diagram, embassy department analogy",
+      "ch08": "Array memory layout, string representation",
+      "ch09": "Pointer addressing, pointer arithmetic, embassy address analogy",
+      "ch10": "Stack vs heap, malloc/free lifecycle, memory leak visualization",
+      "ch11": "Struct memory layout, nested structs",
+      "ch12": "File stream abstraction, file format comparison",
+      "ch13": "Linked list, tree, hash table, graph visuals",
+      "ch14": "Sorting comparison, search visualization, Big O chart",
+      "ch15": "Abstraction layers, compiler vs interpreter",
+      "ch16": "Capstone architecture, flowchart, output mockup"
+    }
+  },
+  "references": {
+    "github_repos": [
+      "https://github.com/ossu/computer-science",
+      "https://github.com/kamranahmedse/developer-roadmap",
+      "https://github.com/practical-tutorials/project-based-learning",
+      "https://github.com/nCally/Project-Based-Tutorials-in-C",
+      "https://github.com/theokwebb/C-from-Scratch",
+      "https://github.com/EbookFoundation/free-programming-books",
+      "https://github.com/nand2tetris/nand2tetris",
+      "https://github.com/cs50/cs50"
+    ],
+    "recommended_books": [
+      {"title": "The C Programming Language", "author": "Kernighan & Ritchie", "note": "The definitive C reference. Read after Chapter 03."},
+      {"title": "C Programming: A Modern Approach", "author": "K. N. King", "note": "More beginner-friendly than K&R. Excellent companion."},
+      {"title": "Head First C", "author": "David Griffiths & Dawn Griffiths", "note": "Visual, brain-friendly approach. Good for struggling learners."}
+    ],
+    "free_online_courses": [
+      {"name": "Harvard CS50x", "url": "https://cs50.harvard.edu/x/", "note": "Teaches C first. Watch the first 5 weeks alongside this course."},
+      {"name": "Nand to Tetris", "url": "https://www.nand2tetris.org/", "note": "Build a computer from scratch. The ultimate complement."}
+    ]
+  }
+}

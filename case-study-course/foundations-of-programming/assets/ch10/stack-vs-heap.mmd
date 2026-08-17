@@ -1,0 +1,41 @@
+graph TD
+    subgraph "Stack vs Heap Memory"
+        direction TB
+        STACK["STACK
+- Automatic allocation
+- Fixed size (~1-8 MB)
+- Very fast
+- LIFO order
+- Local variables live here
+- Automatically cleaned
+- Size known at compile time"]
+        
+        HEAP["HEAP
+- Manual allocation (malloc/free)
+- Large size (all available RAM)
+- Slower
+- Random access
+- Dynamic data lives here
+- Must manually free
+- Size can change at runtime"]
+    end
+    
+    ALLOC["Stack: int x = 42;
+→ Automatically allocated
+→ Automatically destroyed
+→ Just HAPPENS"]
+    
+    ALLOC2["Heap: int *p = malloc(4);
+→ You ASK for memory
+→ You must free(p) when done
+→ You are RESPONSIBLE"]
+    
+    ANALOGY["Everyday Analogy:
+Stack = Backpack (always with you, fast, small)
+Heap = Storage locker (rent space, slow, big)"]
+    
+    style STACK fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style HEAP fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style ALLOC fill:#ffffe6,stroke:#cccc00
+    style ALLOC2 fill:#ffffe6,stroke:#cccc00
+    style ANALOGY fill:#f0f0f0,stroke:#999,stroke-dasharray:5 5

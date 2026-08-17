@@ -1,0 +1,15 @@
+graph TD
+    subgraph "Memory is Like a Filing Cabinet"
+        direction TB
+        CABINET["Cabinet = RAM<br/>Main Memory"] --> DRAWER1["Drawer 0 = Address 0x0000<br/>Holds: int age = 25"]
+        CABINET --> DRAWER2["Drawer 1 = Address 0x0004<br/>Holds: float salary = 50000.50"]
+        CABINET --> DRAWER3["Drawer 2 = Address 0x0008<br/>Holds: char grade = 'A'"]
+        CABINET --> DRAWER4["Drawer 3 = Address 0x000C<br/>Holds: ... more data"]
+        CABINET --> DRAWER_N["Drawer N ..."]
+    end
+    
+    NOTE["Each drawer has:<br/>- A unique ADDRESS (drawer number)<br/>- A VALUE (what's inside)<br/>- A TYPE (what kind of thing fits)"]
+    
+    style CABINET fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style DRAWER1 fill:#e6ffe6,stroke:#00cc00
+    style NOTE fill:#ffffe6,stroke:#cccc00,stroke-dasharray: 5 5

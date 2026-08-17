@@ -1,0 +1,41 @@
+graph TD
+    subgraph "Nested Structures - Structures Within Structures"
+        direction TB
+        STUDENT["struct Student {
+    int id;
+    struct Date enrolled;   // Nested!
+    struct Course courses[10]; // Nested!
+    char name[100];
+};"]
+        
+        DATE["struct Date {
+    int day;    // 1-31
+    int month;  // 1-12
+    int year;   // 2025
+}"]
+        
+        COURSE["struct Course {
+    char title[50];
+    int credits;
+    int grade;
+    char teacher[50];
+}"]
+    end
+    
+    ACCESS["Accessing nested data:
+student.enrolled.day = 15;
+student.enrolled.month = 3;
+student.enrolled.year = 2025;
+student.courses[0].title = 'Math';"]
+    
+    ANALOGY["Everyday Analogy:
+A Student record contains Courses
+A Course contains Assignments
+Each level has its own structure
+But they all fit together!"]
+    
+    style STUDENT fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style DATE fill:#e6ffe6,stroke:#00cc00
+    style COURSE fill:#e6ffe6,stroke:#00cc00
+    style ACCESS fill:#ffffe6,stroke:#cccc00
+    style ANALOGY fill:#f0f0f0,stroke:#999,stroke-dasharray:5 5

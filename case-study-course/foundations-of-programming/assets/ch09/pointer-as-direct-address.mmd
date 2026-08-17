@@ -1,0 +1,35 @@
+graph LR
+    subgraph "Pointer Basics: A Variable That Holds an Address"
+        direction LR
+        X["int x = 42;
+        Value: 42
+        Address: 0x7ffd1000"]
+        
+        PTR["int *p = &x;
+        p holds: 0x7ffd1000
+        (the address of x)
+        *p gives: 42
+        (the value at that address)"]
+    end
+    
+    ANALOGY["Everyday Analogy: House Address
+    x = The actual house
+    &x = The street address (0x7ffd1000)
+    p = A piece of paper with the address written on it
+    *p = Going to that address and walking inside
+         (dereferencing the pointer)"]
+    
+    CODE["int x = 42;
+int *p = &x;  // p points to x
+    
+printf('Value of x: %d', x);    // 42
+printf('Address of x: %p', &x); // 0x7ffd1000
+printf('Value of p: %p', p);    // 0x7ffd1000
+printf('Dereference p: %d', *p); // 42
+    
+*p = 100;  // Changes x to 100!
+printf('New x: %d', x);  // 100"]
+    
+    style X fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style PTR fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style ANALOGY fill:#ffffe6,stroke:#cccc00,stroke-dasharray:5 5

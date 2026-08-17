@@ -1,0 +1,19 @@
+graph TD
+    subgraph "Computer Memory Hierarchy"
+        direction TB
+        R[Registers<br/>~1 KB<br/>Speed: Fastest] --> C[Cache L1/L2/L3<br/>~1-32 MB<br/>Speed: Very Fast]
+        C --> RAM[RAM - Main Memory<br/>~4-64 GB<br/>Speed: Fast]
+        RAM --> SSD[Solid State Drive<br/>~256 GB - 2 TB<br/>Speed: Medium]
+        SSD --> HDD[Hard Disk Drive<br/>~500 GB - 10 TB<br/>Speed: Slow]
+    end
+
+    subgraph "Key Properties"
+        P1[Higher = Faster but Smaller]
+        P2[Lower = Slower but Larger]
+        P3[CPU talks directly to Registers]
+        P4[Programs live in RAM while running]
+    end
+
+    style R fill:#e6ffe6,stroke:#00cc00
+    style RAM fill:#e6f3ff,stroke:#0066cc
+    style HDD fill:#fff0e6,stroke:#cc6600

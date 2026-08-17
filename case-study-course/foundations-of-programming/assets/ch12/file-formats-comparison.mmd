@@ -1,0 +1,34 @@
+graph LR
+    subgraph "Text Files vs Binary Files"
+        direction TB
+        TEXT["📝 TEXT FILE (.txt, .csv, .json)
+- Human readable
+- Stores as characters
+- Uses fopen('r', 'w')
+- fgets/fprintf to read/write
+- Example:
+  'Name,Age,Country
+   Alice,30,France'
+- Larger file size
+- Portable across systems"]
+        
+        BINARY["💾 BINARY FILE (.bin, .dat)
+- Machine readable only
+- Stores raw bytes
+- Uses fopen('rb', 'wb')
+- fread/fwrite to read/write
+- Example:
+  0x1E 0x00 0x00 0x00
+  0x41 0x6C 0x69 0x63
+- Smaller file size
+- NOT portable (endianness!)"]
+    end
+    
+    CHOOSE["When to use which?
+Text: Configuration, logs, data exchange
+Binary: Speed, size, exact data preservation
+In this course: We start with TEXT!"]
+    
+    style TEXT fill:#e6f3ff,stroke:#0066cc
+    style BINARY fill:#e6ffe6,stroke:#00cc00
+    style CHOOSE fill:#ffffe6,stroke:#cccc00,stroke-dasharray:5 5

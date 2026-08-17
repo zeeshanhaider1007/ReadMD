@@ -1,0 +1,31 @@
+graph TD
+    subgraph "Implicit Type Conversion Hierarchy"
+        direction TB
+        TOP["Higher Precision"] --> DOUBLE["double<br/>8 bytes<br/>Highest priority"]
+        DOUBLE --> FLOAT["float<br/>4 bytes"]
+        FLOAT --> LONG["long<br/>8 bytes"]
+        LONG --> INT["int<br/>4 bytes<br/>Default integer type"]
+        INT --> SHORT["short<br/>2 bytes"]
+        SHORT --> CHAR["char<br/>1 byte<br/>Lowest priority"]
+        BOTTOM["Lower Precision"]
+    end
+    
+    subgraph "Rules"
+        R1["1. Smaller type → larger type = automatic (safe)"]
+        R2["2. Larger type → smaller type = needs explicit cast (lossy)"]
+        R3["3. Mixing int + float → result is float"]
+        R4["4. char values promote to int in expressions"]
+    end
+    
+    CHAR -.-> R1
+    DOUBLE -.-> R2
+    
+    EXAMPLES["Examples:<br/><br/>int i = 5; float f = 3.14;<br/>i + f → float (Rule 3)<br/><br/>double d = 3.14159;<br/>int x = d;      // Warning! Truncates!<br/><br/>char c = 'A';<br/>int val = c;    // val = 65 (ASCII)"]
+    
+    style TOP fill:#e6f3ff,stroke:#0066cc
+    style BOTTOM fill:#ffe6e6,stroke:#cc0000
+    style DOUBLE fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style CHAR fill:#ffe6e6,stroke:#cc0000
+    style EXAMPLES fill:#ffffe6,stroke:#cccc00,stroke-width:2px
+    style R1 fill:#e6ffe6,stroke:#00cc00
+    style R2 fill:#ffe6e6,stroke:#cc0000

@@ -1,0 +1,45 @@
+graph TD
+    subgraph "Variable Scope - Who Can See What"
+        direction TB
+        GLOBAL["GLOBAL SCOPE
+int global_x = 10;
+Visible EVERYWHERE
+in this file"]
+        
+        MAIN["main() function
+int main() {
+    int local_a = 5;
+    // can see: global_x, local_a
+    // can NOT see: helper_b
+    
+    helper();
+    return 0;
+}"]
+        
+        HELPER["helper() function
+void helper() {
+    int helper_b = 20;
+    // can see: global_x, helper_b
+    // can NOT see: local_a
+}"]
+        
+        BLOCK["BLOCK SCOPE
+if (condition) {
+    int block_c = 30;
+    // can see: everything above
+    // block_c dies at the }
+}
+// block_c is GONE here"]
+    end
+    
+    RULES["Scope Rules:
+1. Global: visible everywhere
+2. Local: visible only in its function
+3. Block: visible only inside { }
+4. Inner can see outer, NOT vice versa"]
+    
+    style GLOBAL fill:#ffe6e6,stroke:#cc0000,stroke-width:2px
+    style MAIN fill:#e6f3ff,stroke:#0066cc
+    style HELPER fill:#e6ffe6,stroke:#00cc00
+    style BLOCK fill:#ffffe6,stroke:#cccc00
+    style RULES fill:#f0f0f0,stroke:#999,stroke-dasharray:5 5

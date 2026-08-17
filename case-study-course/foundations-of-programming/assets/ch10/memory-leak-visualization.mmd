@@ -1,0 +1,32 @@
+graph LR
+    subgraph "Memory Leak - What Goes Wrong"
+        direction TB
+        LEAK_START["Program allocates memory
+p = malloc(1000);"] --> LEAK_USE["Uses the memory
+p[0] = 42;"]
+        LEAK_USE --> LEAK_LOSE["LOSES the pointer
+p = something_else;
+// Old address is GONE!
+// No way to free() it!"]
+        LEAK_LOSE --> LEAK_GROW["Memory stays allocated
+But nobody can access it
+Program uses MORE memory
+Slows down the system"]
+    end
+    
+    subgraph "Correct Way"
+        CORRECT_START["p = malloc(1000);"] --> CORRECT_USE["Use memory"]
+        CORRECT_USE --> CORRECT_FREE["free(p);"]
+        CORRECT_FREE --> CORRECT_NULL["p = NULL;"]
+    end
+    
+    ANALOGY["IR Analogy:
+Renting hotel rooms for delegates
+who have already left the country.
+The rooms stay booked forever.
+Eventually: NO ROOMS AVAILABLE."]
+    
+    style LEAK_LOSE fill:#ffe6e6,stroke:#cc0000,stroke-width:2px
+    style LEAK_GROW fill:#ffcccc,stroke:#ff0000,stroke-width:3px
+    style CORRECT_FREE fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style ANALOGY fill:#ffffe6,stroke:#cccc00

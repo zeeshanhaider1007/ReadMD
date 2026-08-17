@@ -1,0 +1,26 @@
+graph LR
+    subgraph "Logical Operators in C"
+        direction TB
+        
+        AND["&& (Logical AND)<br/>Both conditions must be true"]
+        OR["|| (Logical OR)<br/>At least one must be true"]
+        NOT["! (Logical NOT)<br/>Reverses true/false"]
+        
+        T1["Example:<br/>age >= 18 && hasID == true<br/>Both needed to enter"]
+        T2["Example:<br/>isWeekend || isHoliday<br/>Either one is enough"]
+        T3["Example:<br/>!isClosed<br/>Open if NOT closed"]
+        
+        AND --> T1
+        OR --> T2
+        NOT --> T3
+        
+        SC["Short-Circuit Evaluation:<br/><br/>A && B: if A is false, B is NEVER evaluated<br/>A || B: if A is true, B is NEVER evaluated<br/><br/>This prevents errors AND saves time!"]
+    end
+
+    TRUTHTABLE["Truth Table:<br/><br/>A      B      A&&B   A||B   !A<br/>false  false  false  false  true<br/>false  true   false  true   true<br/>true   false  false  true   false<br/>true   true   true   true   false"]
+    
+    style AND fill:#e6f3ff,stroke:#0066cc
+    style OR fill:#e6ffe6,stroke:#00cc00
+    style NOT fill:#ffe6e6,stroke:#cc0000
+    style TRUTHTABLE fill:#ffffe6,stroke:#cccc00,stroke-width:2px
+    style SC fill:#e6f3ff,stroke:#0066cc,stroke-dasharray: 5 5

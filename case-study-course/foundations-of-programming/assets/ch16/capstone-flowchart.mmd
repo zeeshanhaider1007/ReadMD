@@ -1,0 +1,51 @@
+graph TD
+    subgraph "Capstone Project Development Flow"
+        direction TB
+        START["1. Choose Your Project
+Ideas: Text analyzer, data sorter,
+file processor, mini-database,
+encryption tool, or your own idea!"]
+        
+        DESIGN["2. Design (design-document.md)
+- What data structures?
+- What functions?
+- What files?
+- Draw the architecture
+        
+plan BEFORE coding!"]
+        
+        IMPLEMENT["3. Implement (implementation.md)
+- Write code section by section
+- Compile OFTEN (every 5-10 lines)
+- Fix warnings AS THEY APPEAR
+- Use git for version control"]
+        
+        TEST["4. Test (testing-debugging.md)
+- Test each function individually
+- Test edge cases (empty files, big data)
+- Use valgrind (no memory leaks!)
+- Fix all bugs before moving on"]
+        
+        PRESENT["5. Present (presentation.md)
+- Show it working
+- Explain what you built
+- What was hardest?
+- What would you add?"]
+    end
+    
+    START --> DESIGN
+    DESIGN --> IMPLEMENT
+    IMPLEMENT --> TEST
+    TEST -->|"Bugs found"| IMPLEMENT
+    TEST -->|"All passing"| PRESENT
+    
+    RULES["GOLDEN RULES:
+- Compile EVERY 5 lines
+- Test BEFORE moving on
+- No memory leaks allowed
+- If stuck: DRAW it on paper first"]
+    
+    style DESIGN fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style TEST fill:#e6ffe6,stroke:#00cc00,stroke-width:2px
+    style PRESENT fill:#ffffe6,stroke:#cccc00
+    style RULES fill:#ffe6e6,stroke:#cc0000,stroke-dasharray:5 5
